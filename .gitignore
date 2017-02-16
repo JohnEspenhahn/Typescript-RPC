@@ -1,0 +1,5 @@
+/node_modules
+/public/**/*.js
+/private/**/*.js
+*.js.map
+index.js
