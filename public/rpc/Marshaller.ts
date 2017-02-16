@@ -1,40 +1,36 @@
+import { ProxyDefCache } from './ProxyDefCache';
 import { TypeUtils } from './utils/TypeUtils';
-import { ProxyDefCache } from './ProxyDef';
-import { InvokeReponse } from './ResponseInvoke';
+import { RMIResponse } from './RMIResponse';
 
 export class Marshaller {
   
-  public static args(args: IArguments): string {
+  public static marshal_args(args: IArguments): RMIResponse[] {
     var res = [];
     for (var key in args) {
       var arg = args[key];
-      if (arg === null || arg === undefined) {
-        res.push(null);
-      } else if (TypeUtils.isFunction(arg) || TypeUtils.isGenerator(arg)) {
-        throw "Marshaller does not support sending function arguments yet";
-      } else if (TypeUtils.isRemote(arg)) {
-        throw "Marshaller does not support sending Remote objects yet";
-      } else {
-        res.push(arg);
-      }
+      res.push(Marshaller.marshal(arg));
     }
 
-    return JSON.stringify(res);
+    return res;
   }
 
-  public static invoke_result(res: any): string {
-    var res_obj: InvokeReponse;
+  public static marshal(res: any): RMIResponse {
+    var res_obj: RMIResponse;
     if (res === null || res === undefined) {
       res_obj = { kind: "serializable", content: null };
     } else if (TypeUtils.isFunction(res) || TypeUtils.isGenerator(res)) {
       throw "Marshaller does not support sending functions as results yet";
     } else if (TypeUtils.isRemote(res)) {
       res_obj = { kind: "proxy", content: ProxyDefCache.load(res).proxy };
-    } else {
+    } else if (TypeUtils.isJSONable(res)) {
       res_obj = { kind: "serializable", content: res };
+    } else {
+      throw "Unhandled content: " + res;
     }
 
-    return JSON.stringify(res_obj);
+    console.log("Marshalled: " + JSON.stringify(res_obj));
+
+    return res_obj;
   }
 
 }

@@ -15,7 +15,7 @@ export abstract class ServerConsumer extends Remote {
   }
 
   public consume(mss: string) {
-    this.enqueue(mss);
+    return this.enqueue(mss);
   }
 
   protected abstract enqueue(mss: string): void;

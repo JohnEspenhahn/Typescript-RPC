@@ -1,14 +1,18 @@
-import { Remote } from "./Remote";
-import { Marshaller } from "./Marshaller";
-import { RMIRegistry } from "./RMIRegistry";
-import { ProxyDef, ProxyDefPair, ProxyDefCache } from "./ProxyDef";
+import { Remote } from "../../public/rpc/Remote";
+import { Marshaller } from "../../public/rpc/Marshaller";
+import { RMIRegistry } from "../../public/rpc/RMIRegistry";
+import { RMIResponse } from "../../public/rpc/RMIResponse";
+import { ProxyDefCache } from "../../public/rpc/ProxyDefCache";
+import { ProxyDef, ProxyDefPair } from "../../public/rpc/ProxyDef";
 
-export class RMIServerRegistry implements RMIRegistry {
-  static RMI_BASE = "rmi"; // also in RMIClientRegistry
+import { ServerDemarshaller } from "./ServerDemarshaller";
 
+export class RMIServerRegistryImpl extends RMIRegistry {
   private serving: { [id: string]: ProxyDefPair } = {};
 
   constructor() {
+    super();
+    
     this.setupMiddleware();
   }
   
@@ -41,17 +45,14 @@ export class RMIServerRegistry implements RMIRegistry {
     }
   }
 
-  private remote_invoke(uuid: string, fn_name: string, params: any, res: any) {
+  private remote_invoke(uuid: string, fn_name: string, args: RMIResponse[], res: any) {
     console.log("Invoking " + fn_name);
     var def = ProxyDefCache.get(uuid);
     if (def) {
       var def_self = def.self as any;
       if (def_self[fn_name]) {
         var fn = def_self[fn_name] as Function;
-        var res_str = Marshaller.invoke_result(fn.apply(def.self, params));
-        
-        res.setHeader('Content-Type', 'application/json');
-        res.send(res_str);
+        res.json(Marshaller.marshal(fn.apply(def.self, ServerDemarshaller.demarshal_args(args))));
       } else {
         res.status(404).send("Unknown function " + fn_name);
       }
@@ -64,7 +65,7 @@ export class RMIServerRegistry implements RMIRegistry {
     console.log("Processing " + path);
 
     var parser = new ExpressParser(path.split(""));
-    if (parser.acceptToken("/") && parser.acceptToken(RMIServerRegistry.RMI_BASE) && parser.acceptToken("/")) {
+    if (parser.acceptToken("/") && parser.acceptToken(RMIRegistry.RMI_BASE) && parser.acceptToken("/")) {
       var action = parser.getToken();
       switch (action) {
         case "lookup":
@@ -76,8 +77,8 @@ export class RMIServerRegistry implements RMIRegistry {
             var uuid = parser.getToken();
             if (parser.acceptToken("/")) {
               var fn_name = parser.getToken();
-              var params = JSON.parse(query["q"]);
-              return this.remote_invoke(uuid, fn_name, params, res);
+              var args = JSON.parse(query["q"]);
+              return this.remote_invoke(uuid, fn_name, args, res);
             }
           }
           break;

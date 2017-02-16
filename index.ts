@@ -1,9 +1,9 @@
 let SSE = require('sse-nodejs');
 let express = require('express');
-
 import { Request, Response } from 'express';
+
 import { ServerImpl } from './private/ServerImpl';
-import { RMIServerRegistry } from './public/rpc/RMIServerRegistry';
+import { RMIServerRegistryImpl } from './private/rpc/RMIServerRegistryImpl';
  
 var app = express();
  
@@ -32,7 +32,7 @@ app.use('/node_modules', express.static('node_modules'));
 
 
 // Setup RMI
-var registry = new RMIServerRegistry();
+var registry = new RMIServerRegistryImpl();
 registry.serve("server", new ServerImpl());
 app.use(registry.express.middleware);
  

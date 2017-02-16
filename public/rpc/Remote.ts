@@ -47,9 +47,9 @@ export abstract class Remote {
     var _this = this;
     var old_func = proto[key];
     proto[key] = function() {
-      console.log("Start proxy");
+      // console.log("Start proxy");
       var res = old_func.apply(_this, arguments);
-      console.log("End proxy");
+      // console.log("End proxy");
       return res;
     };
   }
