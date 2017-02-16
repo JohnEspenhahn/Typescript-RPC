@@ -4,16 +4,20 @@ export class HttpClient {
     public static get(url: string, callback?: HttpCallback): any {
         var req = new XMLHttpRequest();
         if (typeof callback === "function") {
-          req.onreadystatechange = function() { 
-              if (req.readyState === 4)
-                  if (req.status === 200)
-                    callback(JSON.parse(req.responseText));
-                  else
-                    callback(null);
-          }
+          try {
+            req.onreadystatechange = function() { 
+                if (req.readyState === 4)
+                    if (req.status === 200)
+                      callback(JSON.parse(req.responseText));
+                    else
+                      callback(null);
+            }
 
-          req.open("GET", url, true);            
-          req.send(null);
+            req.open("GET", url, true);            
+            req.send(null);
+          } catch (exp) {
+            console.log(exp);
+          }
 
           return req;
         } else {

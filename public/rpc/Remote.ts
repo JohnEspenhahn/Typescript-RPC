@@ -1,6 +1,10 @@
+import { UUID } from "./utils/UUID";
+
 export abstract class Remote {
 
   constructor() {
+    this.__proxy_uuid = UUID.generate();
+
     console.log("In Remote");
 
     // Get prototype right above Remote
@@ -44,11 +48,18 @@ export abstract class Remote {
     var old_func = proto[key];
     proto[key] = function() {
       console.log("Start proxy");
-      old_func.apply(_this, arguments);
+      var res = old_func.apply(_this, arguments);
       console.log("End proxy");
+      return res;
     };
   }
 
-  public static readonly EXPORT = "___i_am_the_real_remote_object_hidden_key___";
-  private ___i_am_the_real_remote_object_hidden_key___() { }
+  // Remote reflection markers
+  public static readonly EXPORT = "__proxy_protokey";
+  private __proxy_protokey() { }
+  private __proxy_uuid: string;
+
+  get proxy_uuid() {
+    return this.__proxy_uuid;
+  }
 }

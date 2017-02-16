@@ -1,6 +1,6 @@
+import { RMIClientRegistry } from "./rpc/RMIClientRegistry";
 import { ClientImpl, ClientProducer } from "./ClientImpl";
 import { ServerConsumer } from "./ServerConsumer";
-import { RMIClientRegistry } from "./rpc/RMIClientRegistry";
 
 export function start() {
   var reg = new RMIClientRegistry();

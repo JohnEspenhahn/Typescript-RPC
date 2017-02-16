@@ -1,17 +1,17 @@
 import { Remote } from "./Remote";
 import { ProxyDef } from "./ProxyDef";
-import { HttpClient } from "./HttpClient";
+import { Marshaller } from "./Marshaller";
 import { RMIRegistry } from "./RMIRegistry";
+import { HttpClient } from "./utils/HttpClient";
 import { InvokeReponse } from "./ResponseInvoke";
-var Cache = require("memory-cache");
 
 export class RMIClientRegistry implements RMIRegistry {
-  static RMI_BASE = "/rmi"; // also in RMIServerRegistry
-  static PROXY_CACHE = new Cache();
+  static RMI_BASE = "rmi"; // also in RMIServerRegistry
+  static PROXY_CACHE: { [id: string]: any } = {};
 
   public lookup<T>(path: string): Promise<T> {
     return new Promise<T>((resolve, reject) => {
-      HttpClient.get(`${RMIClientRegistry.RMI_BASE}/lookup/${path}`, (def: ProxyDef) => {
+      HttpClient.get(`/${RMIClientRegistry.RMI_BASE}/lookup/${path}`, (def: ProxyDef) => {
         if (def == null) return reject();
         else resolve(loadProxy(def));
       });
@@ -24,11 +24,11 @@ export class RMIClientRegistry implements RMIRegistry {
 }
 
 function loadProxy(def: ProxyDef): any {
-  var cached = RMIClientRegistry.PROXY_CACHE.get(def.uuid);
+  var cached = RMIClientRegistry.PROXY_CACHE[def.uuid];
   if (cached) return cached;
   else {
     var proxy = createProxy(def);
-    RMIClientRegistry.PROXY_CACHE.put(def.uuid, proxy, 60000);
+    RMIClientRegistry.PROXY_CACHE[def.uuid] = proxy;
     return proxy;
   }
 }
@@ -41,7 +41,10 @@ function createProxy(def: ProxyDef): any {
       switch (m.kind) {
         case "sync":
           proxy[m.name] = function() {
-            return remoteInvoke.apply(this, [ `${RMIClientRegistry.RMI_BASE}/invoke/${uuid}/${m.name}`, arguments ]);
+            return remoteInvoke.apply(this, [ 
+              `/${RMIClientRegistry.RMI_BASE}/invoke/${uuid}/${m.name}`, 
+              Marshaller.args(arguments)
+            ]);
           };
           break;
         case "async":
@@ -53,8 +56,8 @@ function createProxy(def: ProxyDef): any {
   return proxy;
 }
 
-function remoteInvoke(path: string, args: any[]) {
-  var res: InvokeReponse = HttpClient.get(`${path}?q=${encodeURIComponent(JSON.stringify(args))}`);
+function remoteInvoke(path: string, args: string) {
+  var res: InvokeReponse = HttpClient.get(`${path}?q=${encodeURIComponent(args)}`);
   if (res == null) throw "IOException";
 
   switch (res.kind) {
@@ -62,6 +65,8 @@ function remoteInvoke(path: string, args: any[]) {
       return res.content;
     case "proxy":
       return loadProxy(res.content);
+    case "exception":
+      throw res.content;
     case "promise":
       throw "Promises not yet supported!";
   }

@@ -8,6 +8,7 @@ export class ServerImpl extends ServerConsumer {
   }
 
   protected enqueue(mss: string) {
+    console.log("Enqueuing " + mss);
     this.produce([ mss ]);
   }
 

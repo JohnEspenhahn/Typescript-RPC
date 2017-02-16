@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build:live",
-    "build:live": "nodemon --exec npm run ts-node index.ts",
+    "start": "node index.js",
+    "build:live": "nodemon --exec npm run node index.ts",
     "ts-node": "ts-node"
   },
   "author": "",
