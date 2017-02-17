@@ -1,25 +1,29 @@
 import { Remote } from "./Remote";
 import { TypeUtils } from "./utils/TypeUtils";
-import { ProxyDef, ProxyDefPair, MethodDef } from "./ProxyDef";
+import { MethodDef, ProxyDef, ProxyDefPair } from "./ProxyDef";
 
-export class ProxyDefCache {
+/// Stores the ProxyDefPairs created on the client for sending to the server
+export class ProxyDefPairCache {
   private static generated: { [id: string]: ProxyDefPair } = {};
 
   private static put(obj: Remote, proxy: ProxyDef) {
-    ProxyDefCache.generated[proxy.uuid] = { self: obj, proxy: proxy };
+    ProxyDefPairCache.generated[proxy.uuid] = { self: obj, proxy: proxy };
   }
 
   /// Returns null if not found
   public static get(uuid: string) {
-    return ProxyDefCache.generated[uuid];
+    return ProxyDefPairCache.generated[uuid];
   }
 
   /// Will create if not found
   public static load(obj: Remote): ProxyDefPair {
     // Check for prexisting
-    var existing = ProxyDefCache.get(obj.proxy_uuid);
+    var existing = ProxyDefPairCache.get(obj.proxy_uuid);
     if (existing) return existing;
+    else return ProxyDefPairCache.create(obj);
+  }
 
+  private static create(obj: Remote): ProxyDefPair {
     // Get prototype right above Remote
     let remote_proto_parent = Object.getPrototypeOf(obj);
     let remote_proto = remote_proto_parent;
@@ -54,7 +58,7 @@ export class ProxyDefCache {
     };
 
     // Allow it to be lookuped by uuid
-    ProxyDefCache.put(obj, def);
+    ProxyDefPairCache.put(obj, def);
 
     return { self: obj, proxy: def };
   }

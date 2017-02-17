@@ -3,7 +3,7 @@ let express = require('express');
 import { Request, Response } from 'express';
 
 import { ServerImpl } from './private/ServerImpl';
-import { RMIServerRegistryImpl } from './private/rpc/RMIServerRegistryImpl';
+import { RMIServerRegistry } from './private/rpc/RMIServerRegistry';
  
 var app = express();
  
@@ -32,7 +32,7 @@ app.use('/node_modules', express.static('node_modules'));
 
 
 // Setup RMI
-var registry = new RMIServerRegistryImpl();
+var registry = RMIServerRegistry.get();
 registry.serve("server", new ServerImpl());
 app.use(registry.express.middleware);
  

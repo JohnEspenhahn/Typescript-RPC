@@ -1,19 +1,28 @@
 import { Remote } from "../../public/rpc/Remote";
 import { Marshaller } from "../../public/rpc/Marshaller";
 import { RMIRegistry } from "../../public/rpc/RMIRegistry";
-import { RMIResponse } from "../../public/rpc/RMIResponse";
-import { ProxyDefCache } from "../../public/rpc/ProxyDefCache";
 import { ProxyDef, ProxyDefPair } from "../../public/rpc/ProxyDef";
+import { ProxyDefPairCache } from "../../public/rpc/ProxyDefPairCache";
+import { RMIResponse, ProxyResponse } from "../../public/rpc/RMIResponse";
 
 import { ServerDemarshaller } from "./ServerDemarshaller";
+var SSE = require('sse-nodejs');
 
-export class RMIServerRegistryImpl extends RMIRegistry {
+export class RMIServerRegistry extends RMIRegistry {
   private serving: { [id: string]: ProxyDefPair } = {};
+  private static registry: RMIServerRegistry = null;
 
-  constructor() {
+  private constructor() {
     super();
     
     this.setupMiddleware();
+  }
+
+  public static get(): RMIServerRegistry {
+    if (RMIServerRegistry.registry == null)
+      RMIServerRegistry.registry = new RMIServerRegistry();
+
+    return RMIServerRegistry.registry;
   }
   
   public lookup<T>(path: string): Promise<T> {
@@ -23,7 +32,7 @@ export class RMIServerRegistryImpl extends RMIRegistry {
   public serve(path: string, obj: Remote): boolean {
     if (this.serving[path]) return false;
     else {
-      this.serving[path] = ProxyDefCache.load(obj);
+      this.serving[path] = ProxyDefPairCache.load(obj);
     }
   }
 
@@ -36,23 +45,26 @@ export class RMIServerRegistryImpl extends RMIRegistry {
     };
   }
 
+  /// Uses this.serving because can only lookup things that have been explicity served
   private remote_lookup(path: string, res: any) {
     console.log("Looking up " + path);
     if (this.serving[path]) {
-      res.json(this.serving[path].proxy);
+      var data: ProxyResponse = { kind: "proxy", content: this.serving[path].proxy };
+      res.json(data);
     } else {
       res.status(404).send("Not serving " + path);
     }
   }
 
+  // Other proxies might have been passed to client, so look up in entire cache for def
   private remote_invoke(uuid: string, fn_name: string, args: RMIResponse[], res: any) {
     console.log("Invoking " + fn_name);
-    var def = ProxyDefCache.get(uuid);
-    if (def) {
-      var def_self = def.self as any;
-      if (def_self[fn_name]) {
-        var fn = def_self[fn_name] as Function;
-        res.json(Marshaller.marshal(fn.apply(def.self, ServerDemarshaller.demarshal_args(args))));
+    var pair = ProxyDefPairCache.get(uuid);
+    if (pair) {
+      var self = pair.self as any;
+      if (self[fn_name]) {
+        var fn = self[fn_name] as Function;
+        res.json(Marshaller.marshal(fn.apply(self, ServerDemarshaller.demarshal_args(args))));
       } else {
         res.status(404).send("Unknown function " + fn_name);
       }
@@ -90,6 +102,7 @@ export class RMIServerRegistryImpl extends RMIRegistry {
 
 }
 
+/// Private utility class to handle parsing express urls
 class ExpressParser {
   private cc: string = null;
   private spelling: string = "";

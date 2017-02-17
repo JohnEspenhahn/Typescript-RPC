@@ -1,4 +1,5 @@
 import { RMIResponse } from "../../public/rpc/RMIResponse";
+import { ProxyGenerator } from "../../public/rpc/ProxyGenerator";
 
 export namespace ServerDemarshaller {
   export function demarshal(res: RMIResponse): any {
@@ -7,8 +8,7 @@ export namespace ServerDemarshaller {
       case "serializable":
         return res.content;
       case "proxy":
-        // return this.loadProxy(res.content);
-        throw "Proxies not yet supported!";
+        return ProxyGenerator.load(res.content);
       case "promise":
         throw "Promises not yet supported!";
       case "exception":

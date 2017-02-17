@@ -21,7 +21,8 @@ export class ClientImpl extends ClientConsumer implements ClientProducer {
   }
 
   produce(mss: string) {
-    console.log(this.consumer.consume(mss));
+    var size = this.consumer.size();
+    console.log(this.consumer.consume(`[${size}] mss`));
   }
 
 }

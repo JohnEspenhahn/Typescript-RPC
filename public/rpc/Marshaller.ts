@@ -1,4 +1,4 @@
-import { ProxyDefCache } from './ProxyDefCache';
+import { ProxyDefPairCache } from './ProxyDefPairCache';
 import { TypeUtils } from './utils/TypeUtils';
 import { RMIResponse } from './RMIResponse';
 
@@ -21,7 +21,7 @@ export class Marshaller {
     } else if (TypeUtils.isFunction(res) || TypeUtils.isGenerator(res)) {
       throw "Marshaller does not support sending functions as results yet";
     } else if (TypeUtils.isRemote(res)) {
-      res_obj = { kind: "proxy", content: ProxyDefCache.load(res).proxy };
+      res_obj = { kind: "proxy", content: ProxyDefPairCache.load(res).proxy };
     } else if (TypeUtils.isJSONable(res)) {
       res_obj = { kind: "serializable", content: res };
     } else {

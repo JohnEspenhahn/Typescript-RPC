@@ -1,5 +1,5 @@
 import { RMIResponse } from "./RMIResponse";
-import { ProxyCache } from "./ProxyCache";
+import { ProxyGenerator } from "./ProxyGenerator";
 
 export namespace ClientDemarshaller {
   export function demarshal(res: RMIResponse) {
@@ -8,7 +8,7 @@ export namespace ClientDemarshaller {
       case "serializable":
         return res.content;
       case "proxy":
-        return ProxyCache.loadProxy(res.content);
+        return ProxyGenerator.load(res.content);
       case "promise":
         throw "Promises not yet supported!";
       case "exception":
