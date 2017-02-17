@@ -2,8 +2,8 @@ import { UUID } from "./utils/UUID";
 
 export abstract class Remote {
 
-  constructor() {
-    this.__proxy_uuid = UUID.generate();
+  constructor(uuid?: string) {
+    this.__proxy_uuid = uuid ? uuid : UUID.generate();
 
     console.log("In Remote");
 

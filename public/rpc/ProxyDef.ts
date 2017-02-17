@@ -1,13 +1,9 @@
 import { Remote } from "./Remote";
 
-export interface ProxyDef {
-  uuid: string;
-  methods: MethodDef[];
-}
+export class ProxyDef {
 
-export interface MethodDef {
-  name: string;
-  kind: "sync" | "async";
+  constructor(public uuid: string, public methods: string[]) { }
+
 }
 
 export interface ProxyDefPair {

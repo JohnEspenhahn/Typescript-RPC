@@ -1,11 +1,15 @@
-let SSE = require('sse-nodejs');
 let express = require('express');
 import { Request, Response } from 'express';
-
-import { ServerImpl } from './private/ServerImpl';
-import { RMIServerRegistry } from './private/rpc/RMIServerRegistry';
  
 var app = express();
+var server = require('http').Server(app);
+
+import { RMIRegistry } from './public/rpc/RMIRegistry';
+var registry: RMIRegistry = require("./rpc")(server);
+
+import { ServerImpl } from './private/ServerImpl';
+var rpc_server: ServerImpl = new ServerImpl();
+registry.serve("server", rpc_server);
  
 app.get('/', function (req: Request, res: Response) {
    res.sendFile(__dirname+ '/index.html')
@@ -13,27 +17,9 @@ app.get('/', function (req: Request, res: Response) {
 app.get('/app/main.js', function (req: Request, res: Response) {
    res.sendFile(__dirname+ '/main.js')
 });
- 
-app.get('/time', function (req: Request, res: Response) {
-    var serverSent = SSE(res);
- 
-    serverSent.sendEvent('time', function () {
-        return new Date
-    },1000);
-    serverSent.disconnect(function () {
-        console.log("disconnected");
-    })
- 
-    serverSent.removeEvent('time',2000);
-});
 
-app.use('/app', express.static('public'));
+app.use('/', express.static('public'));
 app.use('/node_modules', express.static('node_modules'));
+app.use('/node_modules/app', express.static('node_modules'));
 
-
-// Setup RMI
-var registry = RMIServerRegistry.get();
-registry.serve("server", new ServerImpl());
-app.use(registry.express.middleware);
- 
-app.listen(3333);
+server.listen(80);

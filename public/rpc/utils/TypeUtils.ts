@@ -1,4 +1,5 @@
 import { Remote } from '../Remote';
+import { ProxyDef } from "../ProxyDef";
 
 export module TypeUtils {
   export function isFunction(a: any): boolean {
@@ -13,8 +14,20 @@ export module TypeUtils {
     return a instanceof Remote;
   }
 
+  export function isPromise(a: any): boolean {
+    return a && typeof a.then === "function";
+  }
+
+  export function isProxyDef(a: any): boolean {
+    return a instanceof ProxyDef;
+  }
+
   export function isPrimative(a: any): boolean {
     return a === undefined || a === null || typeof a === "string" || typeof a === "number" || typeof a === "boolean";
+  }
+
+  export function isError(a: any): boolean {
+    return a instanceof Error;
   }
 
   export function isJSONable(a: any): boolean {

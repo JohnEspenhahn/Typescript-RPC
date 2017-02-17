@@ -1,58 +1,60 @@
-import { ProxyDef } from "./ProxyDef";
+import { Remote } from "./Remote";
 import { Marshaller } from "./Marshaller";
-import { RMIResponse } from "./RMIResponse";
+import { RMIObject } from "./RMIObject";
 import { RMIRegistry } from "./RMIRegistry";
-import { RemoteInvoker } from "./RemoteInvoker";
-import { ClientDemarshaller } from "./ClientDemarshaller";
+import { Demarshaller } from "./Demarshaller";
+import { RMIInvokeRequest } from "./RMIRequest";
+import { ResponseCache } from "./ResponseCache";
+import { ProxyDef } from "./ProxyDef";
+import { UUID } from "./utils/UUID";
+import { ProxyDefPairCache } from "./ProxyDefPairCache";
 
-export class ProxyGenerator {
-  private static PROXY_CACHE: { [id: string]: any } = {};
+export namespace ProxyGenerator {
 
-  public static load(def: ProxyDef): any {
-    var cached = ProxyGenerator.PROXY_CACHE[def.uuid];
-    if (cached) return cached;
-    else {
-      var proxy = ProxyGenerator.createFromDef(def);
-      ProxyGenerator.PROXY_CACHE[def.uuid] = proxy;
+  export function load(def: ProxyDef, source: SocketIO.Socket): Remote {
+    var cached = ProxyDefPairCache.get(def.uuid);
+    if (cached) {
+      return cached.self;
+    } else {
+      var proxy = new GeneratedRemoteProxy(def, source);
+      ProxyDefPairCache.put(proxy, def);
       return proxy;
     }
   }
+  
+}
 
-  private static createFromDef(def: ProxyDef): any {
-    var proxy: any = {};
+class GeneratedRemoteProxy extends Remote {
+  private __source: SocketIO.Socket;
 
-    for (let m of def.methods) {
-      (function(uuid, fn_name) {
-        switch (m.kind) {
-          case "sync":
-            proxy[fn_name] = function() {
-              var cmd_path = `/${RMIRegistry.RMI_BASE}/invoke/${uuid}/${fn_name}`;
-              var args = Marshaller.marshal_args(arguments);
+  constructor(def: ProxyDef, source: SocketIO.Socket) {
+    super(def.uuid);
 
-              var res: RMIResponse = RemoteInvoker.invoke(cmd_path, args);
-              if (res == null)  throw "IOException";
-              
-              return ClientDemarshaller.demarshal(res);
-            };
-            break;
-          case "async":
-            proxy[fn_name] = function() {
-              var cmd_path = `/${RMIRegistry.RMI_BASE}/invoke/${uuid}/${fn_name}`;
-              var args = Marshaller.marshal_args(arguments);
+    this.__source = source;
 
-              return new Promise((resolve, reject) => {
-                RemoteInvoker.invoke_async(cmd_path, args, (res: RMIResponse) => {
-                  if (res == null) reject();
-
-                  resolve(ClientDemarshaller.demarshal(res));
-                });
-              });
-            };
-            break;
-        }
-      })(def.uuid, m.name);
+    for (let fn_name of def.methods) {
+      this.__make_proxy_fn(fn_name);
     }
-
-    return proxy;
   }
+
+  private __make_proxy_fn(fn_name: string) {
+    var proxy_uuid = this.proxy_uuid;
+    var source = this.__source;
+    (this as any)[fn_name] = function() {
+      var args = Marshaller.marshal_args(arguments);
+
+      return new Promise((resolve, reject) => {
+        var req: RMIInvokeRequest = {
+          proxy_uuid: proxy_uuid,
+          call_uuid: UUID.generate(),
+          fn_name: fn_name,
+          args: args
+        };
+
+        ResponseCache.on(req.call_uuid, resolve);
+        source.emit('invoke', req);        
+      });
+    };
+  }
+
 }

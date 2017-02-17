@@ -16,12 +16,12 @@ export abstract class ServerConsumer extends Remote {
     this.consumers.push(client);
   }
 
-  public consume(mss: string): string[] {
+  public async consume(mss: string): Promise<string[]> {
     this.queue.push(mss);
     return this.queue;
   }
 
-  public size(): number {
+  public async size(): Promise<number> {
     return this.queue.length;
   }
 }

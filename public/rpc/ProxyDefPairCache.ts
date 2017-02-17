@@ -1,12 +1,12 @@
 import { Remote } from "./Remote";
 import { TypeUtils } from "./utils/TypeUtils";
-import { MethodDef, ProxyDef, ProxyDefPair } from "./ProxyDef";
+import { ProxyDef, ProxyDefPair } from "./ProxyDef";
 
 /// Stores the ProxyDefPairs created on the client for sending to the server
 export class ProxyDefPairCache {
   private static generated: { [id: string]: ProxyDefPair } = {};
 
-  private static put(obj: Remote, proxy: ProxyDef) {
+  public static put(obj: Remote, proxy: ProxyDef) {
     ProxyDefPairCache.generated[proxy.uuid] = { self: obj, proxy: proxy };
   }
 
@@ -33,29 +33,18 @@ export class ProxyDefPairCache {
     }
 
     // Get all the functions to export
-    var methods: MethodDef[] = [];
+    var methods: string[] = [];
     let keys = Object.getOwnPropertyNames(remote_proto_parent);
     for (let key of keys) {
       if (key === "constructor") continue;
       
       var field = remote_proto_parent[key];
       if (TypeUtils.isFunction(field)) {
-        methods.push({
-          name: key,
-          kind: "sync"
-        });
-      } else if (TypeUtils.isGenerator(field)) {
-        methods.push({
-          name: key,
-          kind: "async"
-        });
+        methods.push(key);
       }
     }
 
-    var def: ProxyDef = {
-      uuid: obj.proxy_uuid,
-      methods: methods
-    };
+    var def: ProxyDef = new ProxyDef(obj.proxy_uuid, methods);
 
     // Allow it to be lookuped by uuid
     ProxyDefPairCache.put(obj, def);

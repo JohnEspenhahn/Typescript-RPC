@@ -2,7 +2,23 @@
 <html>
     <head>
         <title>Typescript RPC</title>
-        <script data-main="app/main.js" src="app/require/require.js"></script>
+        <script src="require/require.js"></script>
+        <script>
+          //main.js contents
+          //Pass a config object to require
+          require.config({
+              "packages": [ "app" ],
+              "paths": {
+                "main": "tsMain",
+                "socket.io": "node_modules/socket.io-client/dist/socket.io"
+              }
+          });
+
+          require(["main", "socket.io"], function (main) {
+              //use the modules as usual.
+              main.start();
+          });
+        </script>
     </head>
     <body>
         <h1>Hello World</h1>

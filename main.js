@@ -1,7 +1,7 @@
 //main.js contents
 //Pass a config object to require
 require.config({
-    "packages": [ "app" ]
+    "packages": [ "app", "node_modules" ]
 });
 
 require(["tsMain"], function (tsMain) {
