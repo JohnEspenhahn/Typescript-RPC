@@ -1,6 +1,7 @@
 import { Remote } from "./rpc/Remote";
 import { ClientConsumer } from "./ClientImpl";
 
+// Server functions that are made available to remote
 export abstract class ServerConsumer extends Remote {
   protected consumers: ClientConsumer[];
 

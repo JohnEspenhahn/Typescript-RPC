@@ -68,7 +68,7 @@ export class RMIServerRegistry extends RMIRegistry {
   private setupMiddleware() {
     var _self: RMIServerRegistry = this;
     this.express.middleware = function (req: any, res: any, next: Function) {
-      if (req.baseUrl === `/${RMIRegistry.RMI_BASE}/lookup`) {
+      if (req.originalUrl.startsWith(`/${RMIRegistry.RMI_BASE}/lookup?`)) {
         var path = req.query.path;
         if (_self.serving[path])
           res.json(<RMIObject> Marshaller.marshal(_self.serving[path].proxy));

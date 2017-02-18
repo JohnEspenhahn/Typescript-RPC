@@ -1,19 +1,20 @@
 import { Remote } from "./rpc/Remote";
 import { ServerConsumer } from "./ServerConsumer";
 
-export interface ClientProducer {
-  produce(mss: string): void;
-}
-
+// Functions in classes that extend Remote will be exported
 export abstract class ClientConsumer extends Remote {
+  messages: string[] = [];
 
   consume(msg: string) {
-    console.log(msg);
+    if (this.messages.length > 10)
+      this.messages.pop();
+
+    this.messages.unshift(msg);
   }
 
 }
 
-export class ClientImpl extends ClientConsumer implements ClientProducer {
+export class ClientImpl extends ClientConsumer {
 
   constructor(private consumer: ServerConsumer) {
     super();

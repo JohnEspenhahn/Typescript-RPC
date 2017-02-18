@@ -1,15 +1,22 @@
 import { Component } from '@angular/core';
 
 import { ClientImplService } from "./ClientImplService";
+import { ClientImpl } from "./ClientImpl";
 
 @Component({
   selector: 'app',
-  template: `<h1>Hello {{name}}</h1>`
+  templateUrl: 'app.component.html'
 })
-export class AppComponent { 
+export class AppComponent {
+  model = { message: "" };
+  client: ClientImpl;
  
-  constructor(client: ClientImplService) {
-    
+  constructor(clientService: ClientImplService) {
+    this.client = clientService.client;
+  }
+
+  send() {
+    this.client.produce(this.model.message);
   }
 
 }

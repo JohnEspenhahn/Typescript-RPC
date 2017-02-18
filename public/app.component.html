@@ -1,0 +1,8 @@
+<form #messageForm="ngForm" (ngSubmit)="send(message.value); messageForm.reset()">
+  <input type="text" name="message" [(ngModel)]="model.message" #message="ngModel" required />
+  <button type="submit" [disabled]="!messageForm.form.valid">Send</button>
+</form>
+
+<hr />
+
+<p *ngFor="let m of client.messages">{{ m }}</p>

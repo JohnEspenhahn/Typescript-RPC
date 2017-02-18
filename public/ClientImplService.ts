@@ -7,16 +7,11 @@ import { ServerConsumer } from "./ServerConsumer";
 
 @Injectable()
 export class ClientImplService {
-  private _client: ClientImpl;
+  public readonly client: ClientImpl;
 
   constructor(private registryService: RMIClientRegistryService) {
-    registryService.lookup("server").then((server: ServerConsumer) => {
-      this._client = new ClientImpl(server);
-    });
-  }
-
-  public async getClient(): Promise<ClientImpl> {
-    return this._client;
+    var server = registryService.registry.lookup_sync<ServerConsumer>("server");
+    this.client = new ClientImpl(server);
   }
 
 }
