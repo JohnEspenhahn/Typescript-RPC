@@ -1,11 +1,13 @@
 import { ProxyDefPairCache } from './ProxyDefPairCache';
 import { TypeUtils } from './utils/TypeUtils';
+import { RMIRegistry } from "./RMIRegistry";
 import { RMIObject } from './RMIObject';
 
 export class Marshaller {
   
+  /// Given `arguments` apply marshal to all of them and return as an array
   public static marshal_args(args: IArguments): RMIObject[] {
-    var res = [];
+    var res: RMIObject[] = [];
     for (var key in args) {
       var arg = args[key];
       res.push(Marshaller.marshal(arg));
@@ -14,6 +16,7 @@ export class Marshaller {
     return res;
   }
 
+  /// Convert a javascript object to something that can be serialized/unserialized without too much loss
   public static marshal(res: any): RMIObject {
     var res_obj: RMIObject;
     if (res === null || res === undefined) {
@@ -34,7 +37,7 @@ export class Marshaller {
       throw "Unhandled content: " + res;
     }
 
-    // console.log("Marshalled: " + JSON.stringify(res_obj));
+    if (RMIRegistry.DEBUG) console.log("Marshalled: " + JSON.stringify(res_obj));
 
     return res_obj;
   }

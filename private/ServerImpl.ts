@@ -6,11 +6,9 @@ export class ServerImpl extends ServerConsumer {
     super();
   }
 
-  public produce(messages: string[]) {
-    for (let c of this.consumers) {
-      // c needs to be a proxy
-      c.consume(messages);
-    }
+  public produce(msg: string) {
+    for (let c of this.consumers)
+      c.consume(msg);
   }
 
 }

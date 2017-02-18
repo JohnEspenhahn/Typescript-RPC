@@ -2,38 +2,45 @@ import { Remote } from "./Remote";
 import { Marshaller } from "./Marshaller";
 import { TypeUtils } from "./utils/TypeUtils";
 import { Demarshaller } from "./Demarshaller";
+import { RMIInvokeRequest } from "./RMIRequest";
 import { RMIObject, RMIResponse } from "./RMIObject";
 import { ProxyDefPairCache } from "./ProxyDefPairCache";
 
 export abstract class RMIRegistry {
+  public static DEBUG: boolean = false;
   public static readonly RMI_BASE = "rmi";
 
   abstract lookup<T>(path: string): Promise<T>;
   abstract serve(path: string, obj: Remote): boolean;
 
+  /// Utility function to emit a response event to the given source socket
   protected respond(call_uuid: string, obj: any, source: SocketIO.Socket): void {
-    console.log("responding " + obj);
-    source.emit('response', new RMIResponse(call_uuid, Marshaller.marshal(obj)));
+    var marshalled_obj = Marshaller.marshal(obj);
+    if (RMIRegistry.DEBUG) console.log("responding " + JSON.stringify(marshalled_obj));
+
+    var rmi_resp: RMIResponse = { call_uuid: call_uuid, response: marshalled_obj };
+    source.emit('response', rmi_resp);
   }
 
-  // Other proxies might have been passed to client, so look up in entire cache for def
-  protected remote_invoke(proxy_uuid: string, call_uuid: string, fn_name: string, args: RMIObject[], source: SocketIO.Socket) {
-    console.log("Invoking " + fn_name);
-    var pair = ProxyDefPairCache.get(proxy_uuid);
+  
+  protected remote_invoke(data: RMIInvokeRequest, source: SocketIO.Socket) {
+    if (RMIRegistry.DEBUG) console.log("Invoking " + data.fn_name);
+
+    var pair = ProxyDefPairCache.get(data.proxy_uuid);
     if (pair) {
       var self = pair.self;
-      var fn = (self as any)[fn_name] as Function;
+      var fn = (self as any)[data.fn_name] as Function;
       if (fn) {
-        var promise_resp = fn.apply(self, Demarshaller.demarshal_args(args, source));
+        var promise_resp = fn.apply(self, Demarshaller.demarshal_args(data.args, source));
         if (promise_resp == null) {
-          this.respond(call_uuid, null, source);
+          this.respond(data.call_uuid, null, source);
         } else if (TypeUtils.isPromise(promise_resp)) {
           promise_resp.then(
-            (fn_res: any) => this.respond(call_uuid, fn_res, source),
-            (err: any) => this.respond(call_uuid, new Error(err), source)
+            (fn_res: any) => this.respond(data.call_uuid, fn_res, source),
+            (err: any) => this.respond(data.call_uuid, new Error(err), source)
           );
         }
-      } else this.respond(call_uuid, new Error("No such function " + fn_name), source);
-    } else this.respond(call_uuid, new Error("No such proxy with uuid " + proxy_uuid), source);
+      } else this.respond(data.call_uuid, new Error("No such function " + data.fn_name), source);
+    } else this.respond(data.call_uuid, new Error("No such proxy with uuid " + data.proxy_uuid), source);
   }
 }

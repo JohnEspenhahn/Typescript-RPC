@@ -1,3 +1,4 @@
+import { RMIRegistry } from "./RMIRegistry";
 import { Demarshaller } from "./Demarshaller";
 import { RMIObject, RMIResponse } from './RMIObject';
 
@@ -15,7 +16,8 @@ export class ResponseCache {
     var resolve = ResponseCache.outstanding[rsp.call_uuid];
     if (!resolve) return;
 
-    console.log('handling response ' + rsp);
+    if (RMIRegistry.DEBUG) console.log('handling response ' + JSON.stringify(rsp));
+
     delete ResponseCache.outstanding[rsp.call_uuid];
     resolve(Demarshaller.demarshal(rsp.response, source));
   }

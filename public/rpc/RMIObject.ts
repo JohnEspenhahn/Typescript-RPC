@@ -23,6 +23,10 @@ export interface ExceptionObject {
   content: string;
 }
 
-export class RMIResponse {
-  constructor(public call_uuid: string, public response: RMIObject) { }
+/// 
+export interface RMIResponse {
+
+  call_uuid: string;
+  response: RMIObject;
+  
 }

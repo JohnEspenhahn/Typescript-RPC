@@ -11,6 +11,7 @@ import { ProxyDefPairCache } from "./ProxyDefPairCache";
 
 export namespace ProxyGenerator {
 
+  /// Get a cached Remote implementation of the Proxy or create a new one
   export function load(def: ProxyDef, source: SocketIO.Socket): Remote {
     var cached = ProxyDefPairCache.get(def.uuid);
     if (cached) {
@@ -24,6 +25,7 @@ export namespace ProxyGenerator {
   
 }
 
+/// A proxy is converted into a Remote so it can be exported to another client if need be
 class GeneratedRemoteProxy extends Remote {
   private __source: SocketIO.Socket;
 

@@ -1,8 +1,13 @@
 {
     "compilerOptions": {
-        "module": "umd",
+        "module": "commonjs",
         "target": "es5",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib": [ "es2015", "dom" ],
         "noImplicitAny": true,
-        "sourceMap": true
+        "suppressImplicitAnyIndexErrors": true
     }
 }

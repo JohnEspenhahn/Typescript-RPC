@@ -7,9 +7,8 @@ export interface ClientProducer {
 
 export abstract class ClientConsumer extends Remote {
 
-   consume(messages: string[]) {
-    for (let mss of messages)
-      console.log(mss);
+  consume(msg: string) {
+    console.log(msg);
   }
 
 }
@@ -18,14 +17,12 @@ export class ClientImpl extends ClientConsumer implements ClientProducer {
 
   constructor(private consumer: ServerConsumer) {
     super();
+
+    this.consumer.add(this);
   }
 
-  produce(mss: string) {
-    this.consumer.size().then((size: number) => {
-      this.consumer.consume(`[${size}] mss`).then((res: string[]) => {
-        console.log(res);
-      });
-    });
+  produce(msg: string) {
+    this.consumer.consume(msg);
   }
 
 }

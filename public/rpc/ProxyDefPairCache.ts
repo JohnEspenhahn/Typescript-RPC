@@ -23,6 +23,7 @@ export class ProxyDefPairCache {
     else return ProxyDefPairCache.create(obj);
   }
 
+  /// Given the original object, create an associated proxy
   private static create(obj: Remote): ProxyDefPair {
     // Get prototype right above Remote
     let remote_proto_parent = Object.getPrototypeOf(obj);

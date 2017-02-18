@@ -8,7 +8,6 @@ import { ProxyDef, ProxyDefPair } from "../../public/rpc/ProxyDef";
 import { ProxyDefPairCache } from "../../public/rpc/ProxyDefPairCache";
 import { RMILookupRequest, RMIInvokeRequest } from "../../public/rpc/RMIRequest";
 import { RMIObject, ProxyObject, RMIResponse } from "../../public/rpc/RMIObject";
-import "socket.io";
 
 export class RMIServerRegistry extends RMIRegistry {
   private static registry: RMIServerRegistry = null;
@@ -18,16 +17,23 @@ export class RMIServerRegistry extends RMIRegistry {
   private constructor(io: SocketIO.Server) {
     super();
 
+    this.setupMiddleware();
+
     io.on("connection", (socket: SocketIO.Socket) => {
+      console.log("Connection!");
+
       socket.on('lookup', (data: RMILookupRequest) => {
+        console.log("Lookup");
         this.remote_lookup(data.path, data.call_uuid, socket);
       });
 
       socket.on('invoke', (data: RMIInvokeRequest) => {
-        this.remote_invoke(data.proxy_uuid, data.call_uuid, data.fn_name, data.args, socket);
+        console.log("invoke");
+        this.remote_invoke(data, socket);
       });
 
       socket.on('response', (data: RMIResponse) => {
+        console.log("response");
         ResponseCache.handle(data, socket);
       });
     });
@@ -56,6 +62,21 @@ export class RMIServerRegistry extends RMIRegistry {
       return this.respond(call_uuid, this.serving[path].proxy, source);
     else 
       return this.respond(call_uuid, new Error("Not serving " + path), source);
+  }
+
+  public readonly express = { middleware: (req: any, res: any, next: Function) => {} };
+  private setupMiddleware() {
+    var _self: RMIServerRegistry = this;
+    this.express.middleware = function (req: any, res: any, next: Function) {
+      if (req.baseUrl === `/${RMIRegistry.RMI_BASE}/lookup`) {
+        var path = req.query.path;
+        if (_self.serving[path])
+          res.json(<RMIObject> Marshaller.marshal(_self.serving[path].proxy));
+        else
+          res.status(404).end();
+      }
+      next();
+    };
   }
 
 }
