@@ -4,14 +4,18 @@
         <title>Typescript RPC</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!-- Must import socket.io -->
         <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 
+        <!-- Angular2 Dependencies -->
         <script src="node_modules/reflect-metadata/Reflect.js"></script>
         <script src="node_modules/zone.js/dist/zone.js"></script>
         <script src="jspm_packages/system.js"></script>
 
+        <!-- Setup module loading -->
         <script src="jspm.config.js"></script>
 
+        <!-- Load the main script (demo_public/main.ts) -->
         <script>
           System.import('main').catch(function(err){ console.error(err); });
         </script>

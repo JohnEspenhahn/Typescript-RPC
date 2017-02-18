@@ -20,7 +20,6 @@
     "express": "^4.14.1",
     "jspm": "^0.16.52",
     "reflect-metadata": "^0.1.9",
-    "socket.io": "^1.7.3",
     "zone.js": "^0.7.7"
   },
   "devDependencies": {
@@ -30,7 +29,7 @@
     "typescript": "^2.1.6"
   },
   "jspm": {
-    "configFile": "public/jspm.config.js",
+    "configFile": "jspm.config.js",
     "dependencies": {
       "@angular/common": "npm:@angular/common@^2.4.8",
       "@angular/compiler": "npm:@angular/compiler@^2.4.8",
@@ -43,6 +42,9 @@
       "rxjs": "npm:rxjs@^5.1.1"
     },
     "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4",
       "typescript": "npm:typescript@^2.0.7"
     }
   }
