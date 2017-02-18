@@ -3,14 +3,12 @@ import { Injectable } from '@angular/core';
 import { Remote } from "../Remote";
 import { RMIClientRegistry } from '../RMIClientRegistry';
 
-var io: () => SocketIO.Socket;
-
 @Injectable()
 export class RMIClientRegistryService {
   private registry: RMIClientRegistry;
 
   constructor() {
-    var socket = io();
+    var socket = io.connect() as any;
     this.registry = RMIClientRegistry.get(socket);
   }
 

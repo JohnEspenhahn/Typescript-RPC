@@ -2,11 +2,19 @@
 <html>
     <head>
         <title>Typescript RPC</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 
-        <script src="polyfills.bundle.js"></script>
-        <script src="vendor.bundle.js"></script>
-        <script src="app.bundle.js"></script>
+        <script src="node_modules/reflect-metadata/Reflect.js"></script>
+        <script src="node_modules/zone.js/dist/zone.js"></script>
+        <script src="jspm_packages/system.js"></script>
+
+        <script src="jspm.config.js"></script>
+
+        <script>
+          System.import('main').catch(function(err){ console.error(err); });
+        </script>
     </head>
     <body>
         <app>Loading...</app>

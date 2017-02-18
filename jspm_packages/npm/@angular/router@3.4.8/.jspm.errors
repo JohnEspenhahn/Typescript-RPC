@@ -1,0 +1,647 @@
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:8:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:8:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:8:28: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:9:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:9:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:9:22: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:10:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:10:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:10:20: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:11:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:11:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:11:24: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:12:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:12:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:12:27: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:13:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:13:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:13:23: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:14:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:14:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:14:21: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:15:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:15:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:15:26: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:16:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:16:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:16:28: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:17:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:17:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:17:36: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:18:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:18:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:18:77: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:19:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:19:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:19:42: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:20:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:20:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:20:80: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:84:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/apply_redirects.js:84:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/config.js:8:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/config.js:8:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/config.js:8:32: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/config.js:14:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/config.js:14:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_router_state.js:8:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_router_state.js:8:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_router_state.js:8:33: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_router_state.js:9:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_router_state.js:9:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_router_state.js:9:45: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_router_state.js:10:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_router_state.js:10:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_router_state.js:10:26: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_router_state.js:17:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_router_state.js:17:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_url_tree.js:8:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_url_tree.js:8:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_url_tree.js:8:32: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_url_tree.js:9:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_url_tree.js:9:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_url_tree.js:9:54: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_url_tree.js:10:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_url_tree.js:10:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_url_tree.js:10:45: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_url_tree.js:19:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/create_url_tree.js:19:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link_active.js:8:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link_active.js:8:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link_active.js:8:92: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link_active.js:9:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link_active.js:9:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link_active.js:9:39: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link_active.js:10:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link_active.js:10:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link_active.js:10:48: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link_active.js:73:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link_active.js:73:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link.js:8:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link.js:8:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link.js:8:34: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link.js:9:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link.js:9:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link.js:9:61: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link.js:10:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link.js:10:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link.js:10:39: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link.js:11:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link.js:11:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link.js:11:32: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link.js:76:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link.js:76:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link.js:187:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_link.js:187:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_outlet.js:8:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_outlet.js:8:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_outlet.js:8:124: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_outlet.js:9:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_outlet.js:9:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_outlet.js:9:33: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_outlet.js:10:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_outlet.js:10:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_outlet.js:10:32: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_outlet.js:35:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/directives/router_outlet.js:35:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_export.js:8:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_export.js:8:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_export.js:8:24: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_export.js:9:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_export.js:9:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_export.js:9:34: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_export.js:10:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_export.js:10:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_export.js:10:25: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_export.js:11:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_export.js:11:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_import_core.js:8:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_import_core.js:8:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_import_core.js:8:27: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_import_core.js:8:30: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_import_core.js:8:39: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_import_core.js:9:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_import_core.js:9:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_import_core.js:10:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_import_core.js:10:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_import_platform-browser.js:1:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_import_platform-browser.js:1:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_import_platform-browser.js:1:39: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_import_platform-browser.js:1:42: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_import_platform-browser.js:1:51: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_import_platform-browser.js:2:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/private_import_platform-browser.js:2:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:8:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:8:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:8:28: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:9:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:9:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:9:20: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:10:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:10:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:10:89: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:11:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:11:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:11:51: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:12:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:12:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:12:55: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:13:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:13:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:13:38: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:14:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:14:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:14:26: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:27:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/recognize.js:27:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/route_reuse_strategy.js:14:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/route_reuse_strategy.js:14:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:8:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:8:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:8:39: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:9:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:9:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:9:29: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:10:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:10:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:10:20: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:11:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:11:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:11:21: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:12:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:12:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:12:26: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:13:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:13:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:13:45: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:17:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:17:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:18:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:18:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:43:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_config_loader.js:43:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:8:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:8:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:8:143: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:9:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:9:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:9:247: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:10:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:10:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:10:25: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:11:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:11:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:11:20: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:12:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:12:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:12:48: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:13:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:13:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:13:34: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:14:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:14:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:14:30: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:15:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:15:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:15:24: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:16:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:16:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:16:36: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:17:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:17:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:17:24: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:18:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:18:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:18:24: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:19:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:19:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:19:33: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:20:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:20:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:20:86: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:21:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:21:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:21:32: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:22:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:22:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:22:37: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:23:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:23:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:23:53: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:24:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:24:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:24:25: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:34:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:34:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:38:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:38:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:39:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:39:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:62:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:62:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:116:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:116:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:197:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:197:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:206:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:206:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:229:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:229:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:249:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:249:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:276:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:276:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:290:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:290:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:373:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:373:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:380:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:380:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:388:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:388:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:392:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_module.js:392:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_outlet_map.js:13:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_outlet_map.js:13:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:8:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:8:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:8:71: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:9:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:9:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:9:22: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:10:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:10:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:10:20: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:11:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:11:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:11:24: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:12:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:12:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:12:27: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:13:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:13:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:13:24: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:14:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:14:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:14:26: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:15:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:15:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:15:26: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:16:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:16:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:16:39: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:17:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:17:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:17:36: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:24:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:24:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:47:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:47:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:69:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:69:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:92:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_preloader.js:92:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:13:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:13:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:13:33: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:14:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:14:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:14:32: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:15:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:15:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:15:43: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:16:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:16:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:16:57: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:17:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:17:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:17:32: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:45:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:45:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:75:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:75:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:91:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:91:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:120:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:120:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:258:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:258:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:303:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:303:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:487:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:487:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:536:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:536:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:567:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router_state.js:567:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:8:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:8:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:8:62: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:9:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:9:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:9:33: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:10:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:10:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:10:25: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:11:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:11:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:11:22: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:12:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:12:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:12:20: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:13:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:13:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:13:27: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:14:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:14:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:14:23: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:15:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:15:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:15:23: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:16:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:16:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:16:21: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:17:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:17:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:17:26: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:18:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:18:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:18:24: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:19:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:19:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:19:32: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:20:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:20:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:20:32: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:21:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:21:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:21:35: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:22:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:22:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:22:31: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:23:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:23:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:23:27: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:24:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:24:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:24:36: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:25:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:25:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:25:33: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:26:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:26:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:26:128: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:27:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:27:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:27:58: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:28:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:28:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:28:44: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:29:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:29:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:29:59: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:30:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:30:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:30:80: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:36:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:36:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:69:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:69:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:111:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:111:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:151:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:151:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:193:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:193:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:255:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:255:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:298:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:298:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:926:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/router.js:926:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/shared.js:18:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/shared.js:18:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/shared.js:19:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/shared.js:19:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/shared.js:47:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/shared.js:47:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_handling_strategy.js:14:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_handling_strategy.js:14:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_handling_strategy.js:50:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_handling_strategy.js:50:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:8:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:8:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:8:32: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:9:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:9:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:9:39: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:13:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:13:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:22:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:22:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:138:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:138:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:181:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:181:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:267:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:267:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:300:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:300:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:316:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:316:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:330:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:330:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:355:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:355:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:392:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:392:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:421:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:421:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:466:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:466:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:473:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:473:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:480:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/url_tree.js:480:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/tree.js:8:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/tree.js:8:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/tree.js:112:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/tree.js:112:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/version.js:8:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/version.js:8:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/version.js:8:25: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/version.js:12:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/version.js:12:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/private_import_router.js:8:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/private_import_router.js:8:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/private_import_router.js:8:29: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/private_import_router.js:8:32: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/private_import_router.js:8:41: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/private_import_router.js:9:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/private_import_router.js:9:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/private_import_router.js:10:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/private_import_router.js:10:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/private_import_router.js:11:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/private_import_router.js:11:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/router_testing_module.js:8:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/router_testing_module.js:8:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/router_testing_module.js:8:44: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/router_testing_module.js:9:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/router_testing_module.js:9:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/router_testing_module.js:9:51: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/router_testing_module.js:10:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/router_testing_module.js:10:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/router_testing_module.js:10:91: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/router_testing_module.js:11:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/router_testing_module.js:11:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/router_testing_module.js:11:140: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/router_testing_module.js:12:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/router_testing_module.js:12:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/router_testing_module.js:12:51: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/router_testing_module.js:42:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/router_testing_module.js:42:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/router_testing_module.js:91:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/router_testing_module.js:91:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/router_testing_module.js:123:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/router_testing_module.js:123:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/upgrade.js:1:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/upgrade.js:1:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/upgrade.js:1:40: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/upgrade.js:2:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/upgrade.js:2:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/upgrade.js:2:24: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/upgrade.js:3:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/upgrade.js:3:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/upgrade.js:3:31: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/upgrade.js:27:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/upgrade.js:27:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/upgrade.js:36:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/upgrade.js:36:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/upgrade.js:47:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/upgrade.js:47:8: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/index.js:13:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/index.js:13:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/index.js:13:566: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:8:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:8:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:8:48: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:9:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:9:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:9:34: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:10:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:10:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:10:30: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:11:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:11:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:11:36: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:12:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:12:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:12:109: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:13:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:13:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:13:87: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:14:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:14:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:14:33: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:15:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:15:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:15:86: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:16:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:16:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:16:90: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:17:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:17:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:17:32: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:18:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:18:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:18:37: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:19:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:19:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:19:91: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:20:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:20:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:20:25: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:21:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:21:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/index.js:21:36: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/index.js:13:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/testing/index.js:13:15: Semi-colon expected
+
+MultipleErrors: /home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:8:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:8:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:8:29: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:9:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:9:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:9:20: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:10:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:10:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:10:27: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:11:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:11:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:11:23: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:12:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:12:13: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:12:15: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:12:20: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:13:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:13:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:13:21: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:14:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:14:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:14:26: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:15:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:15:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:15:41: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:16:1: Unexpected reserved word import
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:16:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:16:32: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:22:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:22:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:36:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:36:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:55:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:55:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:68:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:68:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:75:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:75:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:82:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:82:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:90:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:90:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:109:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:109:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:121:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:121:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:151:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:151:8: Semi-colon expected
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:159:1: Unexpected reserved word export
+/home/tim/.jspm/packages/npm/@angular/router@3.4.8/src/utils/collection.js:159:8: Semi-colon expected

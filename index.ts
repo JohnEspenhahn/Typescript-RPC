@@ -18,6 +18,8 @@ app.use(registry.express.middleware); // Allow synchronous lookup
 app.get('/', function (req: any, res: any) {
    res.sendFile(__dirname+ '/index.html')
 });
-app.use('/', express.static('dist'));
+app.use('/', express.static('public'));
+app.use('/node_modules', express.static('node_modules'));
+app.use('/jspm_packages', express.static('jspm_packages'));
 
 server.listen(8080);
