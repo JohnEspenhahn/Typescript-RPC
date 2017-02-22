@@ -4,7 +4,6 @@ import { FormsModule }   from '@angular/forms';
 
 import { AppComponent }  from './app.component';
 import { ClientImplService } from "./ClientImplService";
-import { RMIClientRegistryService } from "../rpc/angular2/RMIClientRegistryService";
 
 @NgModule({
   imports:      [ 
@@ -16,8 +15,7 @@ import { RMIClientRegistryService } from "../rpc/angular2/RMIClientRegistryServi
   declarations: [ AppComponent ],
   bootstrap:    [ AppComponent ],
   providers:    [ 
-    ClientImplService,
-    RMIClientRegistryService
+    ClientImplService
   ]
 })
 export class AppModule { }

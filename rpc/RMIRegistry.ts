@@ -14,7 +14,7 @@ export abstract class RMIRegistry {
   abstract serve(path: string, obj: Remote): boolean;
 
   /// Utility function to emit a response event to the given source socket
-  protected respond(call_uuid: string, obj: any, source: SocketIO.Socket): void {
+  protected respond(call_uuid: string, obj: any, source: RMI.Socket): void {
     var marshalled_obj = Marshaller.marshal(obj);
     if (RMIRegistry.DEBUG) console.log("responding " + JSON.stringify(marshalled_obj));
 
@@ -22,8 +22,7 @@ export abstract class RMIRegistry {
     source.emit('response', rmi_resp);
   }
 
-  
-  protected remote_invoke(data: RMIInvokeRequest, source: SocketIO.Socket) {
+  protected remote_invoke(data: RMIInvokeRequest, source: RMI.Socket) {
     if (RMIRegistry.DEBUG) console.log("Invoking " + data.fn_name);
 
     var pair = ProxyDefPairCache.get(data.proxy_uuid);
@@ -34,8 +33,8 @@ export abstract class RMIRegistry {
         var promise_resp = fn.apply(self, Demarshaller.demarshal_args(data.args, source));
         if (promise_resp == null) {
           this.respond(data.call_uuid, null, source);
-        } else if (TypeUtils.isPromise(promise_resp)) {
-          promise_resp.then(
+        } else if (TypeUtils.isThenable(promise_resp)) {
+          Promise.resolve(promise_resp).then(
             (fn_res: any) => this.respond(data.call_uuid, fn_res, source),
             (err: any) => this.respond(data.call_uuid, new Error(err), source)
           );

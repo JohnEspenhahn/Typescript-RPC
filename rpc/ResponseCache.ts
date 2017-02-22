@@ -2,8 +2,6 @@ import { RMIRegistry } from "./RMIRegistry";
 import { Demarshaller } from "./Demarshaller";
 import { RMIObject, RMIResponse } from './RMIObject';
 
-type ResolveFunction = (value: any) => void;
-
 export class ResponseCache {
   
   private static outstanding: { [id: string]: ResolveFunction } = {};
@@ -12,7 +10,7 @@ export class ResponseCache {
     ResponseCache.outstanding[call_uuid] = resolve;
   }
 
-  public static handle(rsp: RMIResponse, source: SocketIO.Socket) {
+  public static handle(rsp: RMIResponse, source: RMI.Socket) {
     var resolve = ResponseCache.outstanding[rsp.call_uuid];
     if (!resolve) return;
 

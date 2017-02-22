@@ -19,7 +19,7 @@ export class RMIServerRegistry extends RMIRegistry {
 
     this.setupMiddleware();
 
-    io.on("connection", (socket: SocketIO.Socket) => {
+    io.on("connection", (socket: RMI.Socket) => {
       console.log("Connection!");
 
       socket.on('lookup', (data: RMILookupRequest) => {
@@ -56,7 +56,7 @@ export class RMIServerRegistry extends RMIRegistry {
   }
 
   /// Uses this.serving because can only lookup things that have been explicity served
-  private remote_lookup(path: string, call_uuid: string, source: SocketIO.Socket): any {
+  private remote_lookup(path: string, call_uuid: string, source: RMI.Socket): any {
     console.log("Looking up " + path);
     if (this.serving[path]) 
       return this.respond(call_uuid, this.serving[path].proxy, source);

@@ -1,4 +1,4 @@
-import { Remote } from "../rpc/Remote";
+import { Remote } from "../index";
 import { ServerConsumer } from "./ServerConsumer";
 
 // Functions in classes that extend Remote will be exported

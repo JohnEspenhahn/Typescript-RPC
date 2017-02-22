@@ -1,4 +1,4 @@
-import { Remote } from "../rpc/Remote";
+import { Remote } from "../";
 import { ClientConsumer } from "./ClientImpl";
 
 // Server functions that are made available to remote

@@ -6,20 +6,27 @@ import { ProxyDef, ProxyDefPair } from "./ProxyDef";
 export class ProxyDefPairCache {
   private static generated: { [id: string]: ProxyDefPair } = {};
 
-  public static put(obj: Remote, proxy: ProxyDef) {
+  public static put(obj: Remote, proxy: ProxyDef): void {
+    Object.freeze(obj); // Once ProxyDef is generated, don't allow the Remote to change
     ProxyDefPairCache.generated[proxy.uuid] = { self: obj, proxy: proxy };
   }
 
   /// Returns null if not found
-  public static get(uuid: string) {
-    return ProxyDefPairCache.generated[uuid];
+  public static get(uuid: string): ProxyDefPair {
+    var def: ProxyDefPair = ProxyDefPairCache.generated[uuid];
+    if (!def) throw "Tried to get ProxyDef before it was loaded!";
+    else return def;
+  }
+
+  public static has(uuid: string): boolean {
+    return ProxyDefPairCache.generated[uuid] != null;
   }
 
   /// Will create if not found
   public static load(obj: Remote): ProxyDefPair {
     // Check for prexisting
-    var existing = ProxyDefPairCache.get(obj.proxy_uuid);
-    if (existing) return existing;
+    var has = ProxyDefPairCache.has(obj.proxy_uuid);
+    if (has) return ProxyDefPairCache.get(obj.proxy_uuid);
     else return ProxyDefPairCache.create(obj);
   }
 

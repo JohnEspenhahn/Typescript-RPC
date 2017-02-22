@@ -4,3 +4,9 @@
 *.js.map
 index.js
 proj.sublime-workspace
+demo_private/**/*.js
+jspm_packages/
+rpc/**/*.js
+demo_public/ClientImpl.js
+demo_public/**/*.js
+proj.sublime-project

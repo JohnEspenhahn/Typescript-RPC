@@ -11,8 +11,9 @@ import { RMIInvokeRequest, RMILookupRequest } from "./RMIRequest";
 
 export class RMIClientRegistry extends RMIRegistry {
   private static registry: RMIClientRegistry = null;
+  private static socket: RMI.Socket = null;
 
-  private constructor(private socket: SocketIO.Socket) {
+  private constructor(private socket: RMI.Socket) {
     super();
 
     socket.on('invoke', (data: RMIInvokeRequest) => {
@@ -24,10 +25,21 @@ export class RMIClientRegistry extends RMIRegistry {
     });
   }
 
+  public static getIO(): RMI.Socket {
+    if (RMIClientRegistry.socket) return RMIClientRegistry.socket;
+    else if (!io || typeof io.connect !== "function") throw "Socket.io not imported!";
+
+    var sock = io.connect();
+    RMIClientRegistry.socket = sock;
+    return sock;
+  }
+
   /// Get the singleton instance
-  public static get(socket: SocketIO.Socket): RMIClientRegistry {
-    if (RMIClientRegistry.registry == null)
+  public static get(socket: RMI.Socket = null): RMIClientRegistry {
+    if (RMIClientRegistry.registry == null) {
+      if (socket == null) socket = RMIClientRegistry.getIO();
       RMIClientRegistry.registry = new RMIClientRegistry(socket);
+    }
 
     return RMIClientRegistry.registry;
   }

@@ -29,7 +29,7 @@ export class Marshaller {
       res_obj = { kind: "proxy", content: ProxyDefPairCache.load(res).proxy };
     } else if (TypeUtils.isProxyDef(res)) {
       res_obj = { kind: "proxy", content: res };
-    } else if (TypeUtils.isPromise(res)) {
+    } else if (TypeUtils.isThenable(res)) {
       throw "Promises not yet supported";
     } else if (TypeUtils.isJSONable(res)) {
       res_obj = { kind: "serializable", content: res };
