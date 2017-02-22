@@ -7,7 +7,6 @@ export class ProxyDefPairCache {
   private static generated: { [id: string]: ProxyDefPair } = {};
 
   public static put(obj: Remote, proxy: ProxyDef): void {
-    Object.freeze(obj); // Once ProxyDef is generated, don't allow the Remote to change
     ProxyDefPairCache.generated[proxy.uuid] = { self: obj, proxy: proxy };
   }
 
