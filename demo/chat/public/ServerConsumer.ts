@@ -1,4 +1,4 @@
-import { Remote } from "../";
+import { Remote } from "../../../index";
 import { ClientConsumer } from "./ClientImpl";
 
 // Server functions that are made available to remote

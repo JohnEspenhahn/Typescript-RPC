@@ -5,26 +5,26 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
 // Start RMI Regsitry
-import { RMIServerRegistry } from './';
+import { RMIServerRegistry } from './index';
 var registry: RMIServerRegistry = RMIServerRegistry.get(io);
 app.use(registry.express.middleware); // Allow http synchronous lookup
 
-// Serve my instance
-import { ServerImpl } from './demo_private/ServerImpl';
+// Demo specific routing
+import { ServerImpl } from './demo/chat/ServerImpl';
 registry.serve("server", new ServerImpl());
  
-// Project sepecific express routes
 app.get('/', function (req: any, res: any) {
-   res.sendFile(__dirname+ '/demo_public/index.html')
+   res.sendFile(__dirname+ '/demo/chat/public/index.html')
 });
+app.use('/', express.static('demo/chat/public'));
+
+// RPC code routing
 app.get('/jspm.config.js', function (req: any, res: any) {
    res.sendFile(__dirname+ '/jspm.config.js')
 });
 app.get('/index.js', function (req: any, res: any) {
    res.sendFile(__dirname+ '/index.js')
 });
-
-app.use('/', express.static('demo_public'));
 
 app.use('/rpc', express.static('rpc'));
 app.use('/node_modules', express.static('node_modules'));

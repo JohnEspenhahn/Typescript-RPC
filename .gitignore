@@ -10,3 +10,5 @@ rpc/**/*.js
 demo_public/ClientImpl.js
 demo_public/**/*.js
 proj.sublime-project
+demo/**/*.js
+express_server.js

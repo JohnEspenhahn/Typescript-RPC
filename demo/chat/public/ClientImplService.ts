@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { RMIClientRegistry } from "../index";
+import { RMIClientRegistry } from "../../../index";
 
 import { ClientImpl } from "./ClientImpl";
 import { ServerConsumer } from "./ServerConsumer";

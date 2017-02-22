@@ -1,5 +1,5 @@
-import { ClientConsumer } from "../demo_public/ClientImpl";
-import { ServerConsumer } from "../demo_public/ServerConsumer";
+import { ClientConsumer } from "./public/ClientImpl";
+import { ServerConsumer } from "./public/ServerConsumer";
 
 export class ServerImpl extends ServerConsumer {  
   constructor() {
