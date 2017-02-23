@@ -11,14 +11,3 @@ Clone the package, then in the directory run
 ```
 
 Then naviage to `localhost:8080`
-
-## Directories
-
-### /rpc
-The actual RPC code
-
-### /demo_public
-The files made public to the client (in addition to the rpc code)
-
-### /demo_private
-The files only the backend has access to
