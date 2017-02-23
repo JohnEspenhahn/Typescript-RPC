@@ -6,12 +6,5 @@ export abstract class Remote {
     this.__proxy_uuid = uuid ? uuid : UUID.generate();
   }
 
-  // Remote reflection markers
-  public static readonly EXPORT = "__proxy_protokey";
-  private __proxy_protokey() { }
-  private __proxy_uuid: string;
-
-  get proxy_uuid() {
-    return this.__proxy_uuid;
-  }
+  public readonly __proxy_uuid: string;
 }

@@ -24,8 +24,8 @@ export class ProxyDefPairCache {
   /// Will create if not found
   public static load(obj: Remote): ProxyDefPair {
     // Check for prexisting
-    var has = ProxyDefPairCache.has(obj.proxy_uuid);
-    if (has) return ProxyDefPairCache.get(obj.proxy_uuid);
+    var has = ProxyDefPairCache.has(obj.__proxy_uuid);
+    if (has) return ProxyDefPairCache.get(obj.__proxy_uuid);
     else return ProxyDefPairCache.create(obj);
   }
 
@@ -34,7 +34,7 @@ export class ProxyDefPairCache {
     // Get prototype right above Remote
     let remote_proto_parent = Object.getPrototypeOf(obj);
     let remote_proto = remote_proto_parent;
-    while (!remote_proto.hasOwnProperty(Remote.EXPORT)) {
+    while (remote_proto != Remote.prototype) {
       remote_proto_parent = remote_proto;
       remote_proto = Object.getPrototypeOf(remote_proto);
     }
@@ -51,7 +51,7 @@ export class ProxyDefPairCache {
       }
     }
 
-    var def: ProxyDef = new ProxyDef(obj.proxy_uuid, methods);
+    var def: ProxyDef = new ProxyDef(obj.__proxy_uuid, methods);
 
     // Allow it to be lookuped by uuid
     ProxyDefPairCache.put(obj, def);
