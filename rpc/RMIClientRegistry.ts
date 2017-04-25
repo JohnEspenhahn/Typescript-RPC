@@ -1,6 +1,6 @@
 import { Remote } from "./Remote";
 import { UUID } from "./utils/UUID";
-import { ProxyDef } from "./ProxyDef";
+import { SerializableProxy } from "./SerializableProxy";
 import { ProxyObject } from "./RMIObject";
 import { RMIRegistry } from "./RMIRegistry";
 import { Marshaller } from "./Marshaller";

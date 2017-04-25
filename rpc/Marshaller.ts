@@ -1,4 +1,3 @@
-import { ProxyDefPairCache } from './ProxyDefPairCache';
 import { TypeUtils } from './utils/TypeUtils';
 import { RMIRegistry } from "./RMIRegistry";
 import { RMIObject } from './RMIObject';
@@ -25,10 +24,10 @@ export class Marshaller {
     } else if (TypeUtils.isFunction(res) || TypeUtils.isGenerator(res)) {
       throw "Marshaller does not support sending functions as results yet";
     } else if (TypeUtils.isError(res)) {
-      res_obj = { kind: "exception", content: JSON.stringify(res) };
+      res_obj = { kind: "exception", content: JSON.stringify(res.message) };
     } else if (TypeUtils.isRemote(res)) {
-      res_obj = { kind: "proxy", content: ProxyDefPairCache.load(res).proxy };
-    } else if (TypeUtils.isProxyDef(res)) {
+      res_obj = { kind: "proxy", content: ProxyGenerator.serialize(res) };
+    } else if (TypeUtils.isSerializableProxy(res)) {
       res_obj = { kind: "proxy", content: res };
     } else if (TypeUtils.isThenable(res)) {
       throw "Promises not yet supported";
@@ -45,12 +44,14 @@ export class Marshaller {
 
   /// Given an RMIObject loaded from the socket and turn it back into a normal javascript object
   public static demarshal(res: RMIObject, source: RMI.Socket): any {
+    if (RMIRegistry.DEBUG) console.log("Demarshalling: " + res);
+
     var kind = res.kind;
     switch (kind) {
       case "serializable":
         return res.content;
       case "proxy":
-        return ProxyGenerator.load(res.content, source);
+        return ProxyGenerator.deserialize(res.content, source);
       case "promise":
         throw "Promises not yet supported!";
       case "exception":

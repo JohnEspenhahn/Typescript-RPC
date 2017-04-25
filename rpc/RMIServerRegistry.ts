@@ -2,15 +2,15 @@ import { Remote } from "./Remote";
 import { Marshaller } from "./Marshaller";
 import { RMIRegistry } from "./RMIRegistry";
 import { TypeUtils } from "./utils/TypeUtils";
-import { ProxyDef, ProxyDefPair } from "./ProxyDef";
-import { ProxyDefPairCache } from "./ProxyDefPairCache";
+import { SerializableProxy } from "./SerializableProxy";
+import { ProxyGenerator } from "./ProxyGenerator";
 import { RMILookupRequest, RMIInvokeRequest } from "./RMIRequest";
 import { RMIObject, ProxyObject } from "./RMIObject";
 
 export class RMIServerRegistry extends RMIRegistry {
   private static registry: RMIServerRegistry = null;
 
-  private serving: { [id: string]: ProxyDefPair } = {};
+  private serving: { [id: string]: SerializableProxy } = {};
 
   private constructor(io: SocketIO.Server) {
     super();
@@ -47,7 +47,7 @@ export class RMIServerRegistry extends RMIRegistry {
 
   public serve(path: string, obj: Remote): boolean {
     if (this.serving[path]) return false;
-    else this.serving[path] = ProxyDefPairCache.load(obj);
+    else this.serving[path] = ProxyGenerator.serialize(obj);
   }
 
   public readonly express = { middleware: (req: any, res: any, next: Function) => {} };
@@ -57,7 +57,7 @@ export class RMIServerRegistry extends RMIRegistry {
       if (req.originalUrl.startsWith(`/${RMIRegistry.RMI_BASE}/lookup?`)) {
         var path = req.query.path;
         if (_self.serving[path])
-          res.json(<RMIObject> Marshaller.marshal(_self.serving[path].proxy));
+          res.json(Marshaller.marshal(_self.serving[path]));
         else
           res.status(404).end();
       }

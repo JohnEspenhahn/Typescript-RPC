@@ -1,5 +1,5 @@
 import { Remote } from '../Remote';
-import { ProxyDef } from "../ProxyDef";
+import { SerializableProxy } from "../SerializableProxy";
 
 export module TypeUtils {
   export function isFunction(a: any): a is Function {
@@ -18,8 +18,8 @@ export module TypeUtils {
     return a && typeof a.then === "function";
   }
 
-  export function isProxyDef(a: any): a is ProxyDef {
-    return a instanceof ProxyDef;
+  export function isSerializableProxy(a: any): a is SerializableProxy {
+    return a instanceof SerializableProxy;
   }
 
   export function isPrimative(a: any): boolean {

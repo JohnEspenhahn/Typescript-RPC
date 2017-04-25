@@ -3,10 +3,10 @@ import { Marshaller } from "./Marshaller";
 import { TypeUtils } from "./utils/TypeUtils";
 import { RMIInvokeRequest } from "./RMIRequest";
 import { RMIObject } from "./RMIObject";
-import { ProxyDefPairCache } from "./ProxyDefPairCache";
+import { ProxyGenerator } from "./ProxyGenerator"
 
 export abstract class RMIRegistry {
-  public static DEBUG: boolean = false;
+  public static DEBUG: boolean = true;
   public static readonly RMI_BASE = "rmi";
 
   abstract lookup<T>(path: string): Promise<T>;
@@ -22,19 +22,20 @@ export abstract class RMIRegistry {
   protected remote_invoke(data: RMIInvokeRequest, source: RMI.Socket, callback: ResolveFunction) {
     if (RMIRegistry.DEBUG) console.log("Invoking " + data.fn_name);
 
-    var pair = ProxyDefPairCache.get(data.proxy_uuid);
-    if (pair) {
-      var self = pair.self;
-      var fn = (self as any)[data.fn_name] as Function;
+    var remote = ProxyGenerator.getByUUID(data.proxy_uuid);
+    if (remote) {
+      var fn = (remote as any)[data.fn_name] as Function;
       if (fn) {
         try {
-          var promise_resp = fn.apply(self, Marshaller.demarshal_args(data.args, source));
+          var promise_resp = fn.apply(remote, Marshaller.demarshal_args(data.args, source));
           if (promise_resp == null) {
             this.respond(null, callback);
           } else if (TypeUtils.isThenable(promise_resp)) {
             Promise.resolve(promise_resp).then(
               (fn_res: any) => this.respond(fn_res, callback),
               (err: any) => {
+                if (RMIRegistry.DEBUG) console.log(err);
+
                 if (err instanceof Error)
                   this.respond(err, callback)
                 else 

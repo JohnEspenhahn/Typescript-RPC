@@ -1,4 +1,4 @@
-import { ProxyDef } from "./ProxyDef";
+import { SerializableProxy } from "./SerializableProxy";
 
 export type RMIObject = SerializableObject | ProxyObject | PromiseObject | ExceptionObject;
 
@@ -9,7 +9,7 @@ export interface SerializableObject {
 
 export interface ProxyObject {
   kind: "proxy";
-  content: ProxyDef;
+  content: SerializableProxy;
 }
 
 type PromiseEndpoint = string;
