@@ -3,11 +3,10 @@ import { Marshaller } from "./Marshaller";
 import { RMIRegistry } from "./RMIRegistry";
 import { Demarshaller } from "./Demarshaller";
 import { TypeUtils } from "./utils/TypeUtils";
-import { ResponseCache } from "./ResponseCache";
 import { ProxyDef, ProxyDefPair } from "./ProxyDef";
 import { ProxyDefPairCache } from "./ProxyDefPairCache";
 import { RMILookupRequest, RMIInvokeRequest } from "./RMIRequest";
-import { RMIObject, ProxyObject, RMIResponse } from "./RMIObject";
+import { RMIObject, ProxyObject } from "./RMIObject";
 
 export class RMIServerRegistry extends RMIRegistry {
   private static registry: RMIServerRegistry = null;
@@ -22,19 +21,16 @@ export class RMIServerRegistry extends RMIRegistry {
     io.on("connection", (socket: RMI.Socket) => {
       console.log("Connection!");
 
-      socket.on('lookup', (data: RMILookupRequest) => {
+      socket.on('lookup', (data: RMILookupRequest, callback: ResolveFunction) => {
         console.log("Lookup");
-        this.remote_lookup(data.path, data.call_uuid, socket);
+        var s = this.serving[data.path];
+        if (s) this.respond(s, callback);
+        else this.respond(new Error("Not serving " + data.path), callback);
       });
 
-      socket.on('invoke', (data: RMIInvokeRequest) => {
+      socket.on('invoke', (data: RMIInvokeRequest, callback: ResolveFunction) => {
         console.log("invoke");
-        this.remote_invoke(data, socket);
-      });
-
-      socket.on('response', (data: RMIResponse) => {
-        console.log("response");
-        ResponseCache.handle(data, socket);
+        this.remote_invoke(data, socket, callback);
       });
     });
   }
@@ -53,15 +49,6 @@ export class RMIServerRegistry extends RMIRegistry {
   public serve(path: string, obj: Remote): boolean {
     if (this.serving[path]) return false;
     else this.serving[path] = ProxyDefPairCache.load(obj);
-  }
-
-  /// Uses this.serving because can only lookup things that have been explicity served
-  private remote_lookup(path: string, call_uuid: string, source: RMI.Socket): any {
-    console.log("Looking up " + path);
-    if (this.serving[path]) 
-      return this.respond(call_uuid, this.serving[path].proxy, source);
-    else 
-      return this.respond(call_uuid, new Error("Not serving " + path), source);
   }
 
   public readonly express = { middleware: (req: any, res: any, next: Function) => {} };

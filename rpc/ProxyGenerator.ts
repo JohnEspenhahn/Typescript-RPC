@@ -4,9 +4,7 @@ import { RMIObject } from "./RMIObject";
 import { RMIRegistry } from "./RMIRegistry";
 import { Demarshaller } from "./Demarshaller";
 import { RMIInvokeRequest } from "./RMIRequest";
-import { ResponseCache } from "./ResponseCache";
 import { ProxyDef } from "./ProxyDef";
-import { UUID } from "./utils/UUID";
 import { ProxyDefPairCache } from "./ProxyDefPairCache";
 
 export namespace ProxyGenerator {
@@ -32,13 +30,17 @@ function genFn(proxy_uuid: string, fn_name: string, source: RMI.Socket): Functio
     return new Promise((resolve, reject) => {
       var req: RMIInvokeRequest = {
         proxy_uuid: proxy_uuid,
-        call_uuid: UUID.generate(),
         fn_name: fn_name,
         args: args
       };
 
-      ResponseCache.on(req.call_uuid, resolve);
-      source.emit('invoke', req);        
+      source.emit('invoke', req, (res: RMIObject) => {
+        try {
+          resolve(Demarshaller.demarshal(res, source));
+        } catch (e) {
+          reject(e);
+        }
+      });
     });
   };
 }

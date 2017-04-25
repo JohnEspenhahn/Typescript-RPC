@@ -22,11 +22,3 @@ export interface ExceptionObject {
   kind: "exception";
   content: string;
 }
-
-/// 
-export interface RMIResponse {
-
-  call_uuid: string;
-  response: RMIObject;
-  
-}

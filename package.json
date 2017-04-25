@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cmd.exe /C \"tsc && node express_server.js\"",
+    "start": "node express_server.js",
     "jspm": "jspm"
   },
   "author": "",
