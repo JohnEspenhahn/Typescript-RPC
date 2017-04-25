@@ -1,7 +1,6 @@
 import { Remote } from "./Remote";
 import { Marshaller } from "./Marshaller";
 import { RMIRegistry } from "./RMIRegistry";
-import { Demarshaller } from "./Demarshaller";
 import { TypeUtils } from "./utils/TypeUtils";
 import { ProxyDef, ProxyDefPair } from "./ProxyDef";
 import { ProxyDefPairCache } from "./ProxyDefPairCache";

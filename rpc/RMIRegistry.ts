@@ -1,7 +1,6 @@
 import { Remote } from "./Remote";
 import { Marshaller } from "./Marshaller";
 import { TypeUtils } from "./utils/TypeUtils";
-import { Demarshaller } from "./Demarshaller";
 import { RMIInvokeRequest } from "./RMIRequest";
 import { RMIObject } from "./RMIObject";
 import { ProxyDefPairCache } from "./ProxyDefPairCache";
@@ -29,7 +28,7 @@ export abstract class RMIRegistry {
       var fn = (self as any)[data.fn_name] as Function;
       if (fn) {
         try {
-          var promise_resp = fn.apply(self, Demarshaller.demarshal_args(data.args, source));
+          var promise_resp = fn.apply(self, Marshaller.demarshal_args(data.args, source));
           if (promise_resp == null) {
             this.respond(null, callback);
           } else if (TypeUtils.isThenable(promise_resp)) {

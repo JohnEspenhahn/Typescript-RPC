@@ -2,7 +2,6 @@ import { Remote } from "./Remote";
 import { Marshaller } from "./Marshaller";
 import { RMIObject } from "./RMIObject";
 import { RMIRegistry } from "./RMIRegistry";
-import { Demarshaller } from "./Demarshaller";
 import { RMIInvokeRequest } from "./RMIRequest";
 import { ProxyDef } from "./ProxyDef";
 import { ProxyDefPairCache } from "./ProxyDefPairCache";
@@ -36,7 +35,7 @@ function genFn(proxy_uuid: string, fn_name: string, source: RMI.Socket): Functio
 
       source.emit('invoke', req, (res: RMIObject) => {
         try {
-          resolve(Demarshaller.demarshal(res, source));
+          resolve(Marshaller.demarshal(res, source));
         } catch (e) {
           reject(e);
         }

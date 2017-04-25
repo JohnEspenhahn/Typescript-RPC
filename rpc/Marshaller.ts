@@ -2,6 +2,7 @@ import { ProxyDefPairCache } from './ProxyDefPairCache';
 import { TypeUtils } from './utils/TypeUtils';
 import { RMIRegistry } from "./RMIRegistry";
 import { RMIObject } from './RMIObject';
+import { ProxyGenerator } from "./ProxyGenerator";
 
 export class Marshaller {
   
@@ -40,6 +41,30 @@ export class Marshaller {
     if (RMIRegistry.DEBUG) console.log("Marshalled: " + JSON.stringify(res_obj));
 
     return res_obj;
+  }
+
+  /// Given an RMIObject loaded from the socket and turn it back into a normal javascript object
+  public static demarshal(res: RMIObject, source: RMI.Socket): any {
+    var kind = res.kind;
+    switch (kind) {
+      case "serializable":
+        return res.content;
+      case "proxy":
+        return ProxyGenerator.load(res.content, source);
+      case "promise":
+        throw "Promises not yet supported!";
+      case "exception":
+        throw res.content;
+      default:
+        throw new Error("Unhandled RMIObject kind " + kind);
+    }
+  }
+  
+  /// Given a list of RMIObjects apply demarshal to them and return as an array
+  public static demarshal_args(res: RMIObject[], source: RMI.Socket): any[] {
+    var dm: any[] = [];
+    for (var r of res) dm.push(Marshaller.demarshal(r, source));
+    return dm;
   }
 
 }

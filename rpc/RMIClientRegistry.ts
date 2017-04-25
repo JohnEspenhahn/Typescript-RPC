@@ -3,7 +3,7 @@ import { UUID } from "./utils/UUID";
 import { ProxyDef } from "./ProxyDef";
 import { ProxyObject } from "./RMIObject";
 import { RMIRegistry } from "./RMIRegistry";
-import { Demarshaller } from "./Demarshaller";
+import { Marshaller } from "./Marshaller";
 import { ProxyGenerator } from "./ProxyGenerator";
 import { RMIObject } from "./RMIObject";
 import { RMIInvokeRequest, RMILookupRequest } from "./RMIRequest";
@@ -49,7 +49,7 @@ export class RMIClientRegistry extends RMIRegistry {
 
       this.socket.emit('lookup', req, (res: RMIObject) => {
         try {
-          resolve(Demarshaller.demarshal(res, this.socket));
+          resolve(Marshaller.demarshal(res, this.socket));
         } catch (e) {
           reject(e);
         }
@@ -63,7 +63,7 @@ export class RMIClientRegistry extends RMIRegistry {
     request.send(null);
 
     if (request.status === 200)
-      return Demarshaller.demarshal(<RMIObject> JSON.parse(request.responseText), this.socket);
+      return Marshaller.demarshal(<RMIObject> JSON.parse(request.responseText), this.socket);
     else 
       throw new Error("Failed to lookup " + path);
   }
