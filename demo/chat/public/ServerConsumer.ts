@@ -16,7 +16,6 @@ export abstract class ServerConsumer extends Remote {
   }
 
   async getConsumers(): Promise<ClientConsumer[]> {
-    console.log(this.consumers);
     return this.consumers;
   }
 

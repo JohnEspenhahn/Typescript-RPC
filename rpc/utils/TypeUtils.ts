@@ -30,6 +30,10 @@ export module TypeUtils {
     return a instanceof Error;
   }
 
+  export function isIterable(a: any): a is Iterable<any> {
+    return typeof a !== "string" && Object.getPrototypeOf(a).hasOwnProperty(Symbol.iterator);
+  }
+
   export function isJSONable(a: any): a is Object {
     if (isPrimative(a)) return true;
     else if (!(a instanceof Object)) return false;

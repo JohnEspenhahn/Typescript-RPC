@@ -31,6 +31,8 @@ export class Marshaller {
       res_obj = { kind: "proxy", content: res };
     } else if (TypeUtils.isThenable(res)) {
       throw "Promises not yet supported";
+    } else if (TypeUtils.isIterable(res)) {
+      res_obj = { kind: "iterable", content: map(res, (x) => Marshaller.marshal(x)) };
     } else if (TypeUtils.isJSONable(res)) {
       res_obj = { kind: "serializable", content: res };
     } else {
@@ -43,21 +45,22 @@ export class Marshaller {
   }
 
   /// Given an RMIObject loaded from the socket and turn it back into a normal javascript object
-  public static demarshal(res: RMIObject, source: RMI.Socket): any {
-    if (RMIRegistry.DEBUG) console.log("Demarshalling: " + JSON.stringify(res));
+  public static demarshal(obj: RMIObject, source: RMI.Socket): any {
+    if (RMIRegistry.DEBUG) console.log("Demarshalling: " + JSON.stringify(obj));
 
-    var kind = res.kind;
-    switch (kind) {
+    switch (obj.kind) {
       case "serializable":
-        return res.content;
+        return obj.content;
       case "proxy":
-        return ProxyGenerator.deserialize(res.content, source);
+        return ProxyGenerator.deserialize(obj.content, source);
       case "promise":
         throw "Promises not yet supported!";
       case "exception":
-        throw res.content;
-      default:
-        throw new Error("Unhandled RMIObject kind " + kind);
+        throw obj.content;
+      case "iterable":
+        return map(obj.content, (x) => Marshaller.demarshal(x, source));
+      // default:
+      //   throw new Error("Unhandled RMIObject kind " + kind);
     }
   }
   
@@ -68,4 +71,11 @@ export class Marshaller {
     return dm;
   }
 
+}
+
+// Utility function for processing iterables
+function map<T,K>(it: Iterable<T>, lambda: (t:T) => K) {
+  let res = [];
+  for (let x of it) res.push(lambda(x));
+  return res;
 }

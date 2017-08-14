@@ -26,17 +26,16 @@ export class SerializableProxy {
     let readonlyValues: { [id:string]: any } = { };
     let propertyNames = Object.getOwnPropertyNames(remote_proto_parent);
     for (let propName of propertyNames) {
-      if (propName === "constructor") continue;
+      let descriptor = Object.getOwnPropertyDescriptor(remote_proto_parent, propName);
+      if (!descriptor || propName === "constructor") continue;
       
       // Specify fields
       let field = remote_proto_parent[propName];
       if (TypeUtils.isFunction(field)) {
         methods.push(propName);
-      } else {
+      } else if (descriptor && descriptor.get && Object.getOwnPropertyDescriptor(descriptor.get, '__readHeavy')) {
         // Check for special flags
-        let descriptor = Object.getOwnPropertyDescriptor(remote_proto_parent, propName);
-        if (descriptor && descriptor.get && Object.getOwnPropertyDescriptor(descriptor.get, '__readHeavy'))
-          readonlyValues[propName] = remote[propName];
+        readonlyValues[propName] = remote[propName];
       }
     }
 

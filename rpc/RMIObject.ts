@@ -1,6 +1,6 @@
 import { SerializableProxy } from "./SerializableProxy";
 
-export type RMIObject = SerializableObject | ProxyObject | PromiseObject | ExceptionObject;
+export type RMIObject = SerializableObject | ProxyObject | PromiseObject | ExceptionObject | IterableObject;
 
 export interface SerializableObject {
   kind: "serializable";
@@ -21,4 +21,9 @@ export interface PromiseObject {
 export interface ExceptionObject {
   kind: "exception";
   content: string;
+}
+
+export interface IterableObject {
+  kind: "iterable";
+  content: RMIObject[];
 }

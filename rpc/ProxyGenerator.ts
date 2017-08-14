@@ -94,6 +94,7 @@ function generateRemoteProxy(def: SerializableProxy, source: RMI.Socket): Remote
       });
     }
   };
+  
   let prototype = gen_class.prototype;
 
   // Define stub functions
