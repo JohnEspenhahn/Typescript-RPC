@@ -7,12 +7,23 @@ import { ServerConsumer } from "./ServerConsumer";
 
 @Injectable()
 export class ClientImplService {
-  public readonly client: ClientImpl;
+  private readonly server: ServerConsumer;
+  private _client: ClientImpl;
 
   constructor() {
     var registry = RMIClientRegistry.get();
-    var server = registry.lookup_sync<ServerConsumer>("server");
-    this.client = new ClientImpl(server);
+    this.server = registry.lookup_sync<ServerConsumer>("server");
+  }
+
+  get client(): ClientImpl {
+    if (this._client) 
+      return this._client;
+
+    // Create a client with a dummy id (number 0-99)
+    this._client = new ClientImpl("" + ~~(Math.random()*100), this.server);
+    this._client.connect();
+    
+    return this._client;
   }
 
 }

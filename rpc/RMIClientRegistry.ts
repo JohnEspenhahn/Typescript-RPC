@@ -8,6 +8,10 @@ import { ProxyGenerator } from "./ProxyGenerator";
 import { RMIObject } from "./RMIObject";
 import { RMIInvokeRequest, RMILookupRequest } from "./RMIRequest";
 
+Remote.prototype.__broadcast_attribute = function() {
+  console.log("__broadcast_attribute from client");
+};
+
 export class RMIClientRegistry extends RMIRegistry {
   private static registry: RMIClientRegistry = null;
   private static socket: RMI.Socket = null;

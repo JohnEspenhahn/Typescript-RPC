@@ -7,10 +7,13 @@ import { ProxyGenerator } from "./ProxyGenerator";
 import { RMILookupRequest, RMIInvokeRequest } from "./RMIRequest";
 import { RMIObject, ProxyObject } from "./RMIObject";
 
+Remote.prototype.__broadcast_attribute = function() {
+  console.log("__broadcast_attribute from server");
+};
+
 export class RMIServerRegistry extends RMIRegistry {
   private static registry: RMIServerRegistry = null;
-
-  private serving: { [id: string]: SerializableProxy } = {};
+  private serving: Map<string,SerializableProxy> = new Map();
 
   private constructor(io: SocketIO.Server) {
     super();
@@ -21,14 +24,16 @@ export class RMIServerRegistry extends RMIRegistry {
       console.log("Connection!");
 
       socket.on('lookup', (data: RMILookupRequest, callback: ResolveFunction) => {
-        console.log("Lookup");
-        var s = this.serving[data.path];
-        if (s) this.respond(s, callback);
-        else this.respond(new Error("Not serving " + data.path), callback);
+        if (RMIRegistry.DEBUG) 
+          console.log("Lookup " + data.path);
+        
+        if (this.serving.has(data.path))
+          this.respond(this.serving.get(data.path), callback);
+        else 
+          this.respond(new Error("Not serving " + data.path), callback);
       });
 
       socket.on('invoke', (data: RMIInvokeRequest, callback: ResolveFunction) => {
-        console.log("invoke");
         this.remote_invoke(data, socket, callback);
       });
     });
@@ -46,18 +51,17 @@ export class RMIServerRegistry extends RMIRegistry {
   }
 
   public serve(path: string, obj: Remote): boolean {
-    if (this.serving[path]) return false;
-    else this.serving[path] = ProxyGenerator.serialize(obj);
+    if (this.serving.has(path)) return false;
+    else this.serving.set(path, ProxyGenerator.serialize(obj));
   }
 
   public readonly express = { middleware: (req: any, res: any, next: Function) => {} };
   private setupMiddleware() {
-    var _self: RMIServerRegistry = this;
-    this.express.middleware = function (req: any, res: any, next: Function) {
+    this.express.middleware = (req: any, res: any, next: Function) => {
       if (req.originalUrl.startsWith(`/${RMIRegistry.RMI_BASE}/lookup?`)) {
         var path = req.query.path;
-        if (_self.serving[path])
-          res.json(Marshaller.marshal(_self.serving[path]));
+        if (this.serving.has(path))
+          res.json(Marshaller.marshal(this.serving.get(path)));
         else
           res.status(404).end();
       }

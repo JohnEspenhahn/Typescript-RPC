@@ -9,10 +9,11 @@ import { ClientImpl } from "./ClientImpl";
 })
 export class AppComponent {
   model = { message: "" };
-  client: ClientImpl;
  
-  constructor(clientService: ClientImplService) {
-    this.client = clientService.client;
+  constructor(private clientService: ClientImplService) { }
+
+  get client() {
+    return this.clientService.client;
   }
 
   send() {

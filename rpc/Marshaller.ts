@@ -44,7 +44,7 @@ export class Marshaller {
 
   /// Given an RMIObject loaded from the socket and turn it back into a normal javascript object
   public static demarshal(res: RMIObject, source: RMI.Socket): any {
-    if (RMIRegistry.DEBUG) console.log("Demarshalling: " + res);
+    if (RMIRegistry.DEBUG) console.log("Demarshalling: " + JSON.stringify(res));
 
     var kind = res.kind;
     switch (kind) {

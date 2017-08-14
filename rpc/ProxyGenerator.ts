@@ -5,6 +5,7 @@ import { RMIRegistry } from "./RMIRegistry";
 import { RMIInvokeRequest } from "./RMIRequest";
 import { SerializableProxy } from "./SerializableProxy";
 import { TypeUtils } from "./utils/TypeUtils";
+import { RPCError } from "./RPCError";
 
 export class ProxyGenerator {
   private static cache: { [id: string]: CachedProxy } = {};
@@ -32,18 +33,31 @@ export class ProxyGenerator {
     let cp = ProxyGenerator.cache[uuid];
     if (cp) return cp.remote;
     else {
-      var remote: Remote = new GeneratedRemoteProxy(def, source);      
+      var remote: Remote = generateRemoteProxy(def, source);      
       ProxyGenerator.cache[def.uuid] = new CachedProxy(remote, def);
       return remote;
+    }
+  }
+
+  public static setAttribute(uuid: string, attribute_name: string, value: any) {
+    let cp = ProxyGenerator.cache[uuid];
+    if (cp) {
+      let remote = cp.remote;
+      if ((remote instanceof GeneratedRemoteProxy) && remote["__" + attribute_name]) {
+        // Should only do this on generated remote proxies with the given attribute
+        remote["__" + attribute_name] = value;
+      }
     }
   }
   
 }
 
-function genFn(proxy_uuid: string, fn_name: string, source: RMI.Socket): Function {
+function genFn(proxy_uuid: string, fn_name: string): Function {
   return function() {
-    var args = Marshaller.marshal_args(arguments);
+    if (!this.__connected)
+      throw new RPCError("Client disconnected");
 
+    var args = Marshaller.marshal_args(arguments);
     return new Promise((resolve, reject) => {
       var req: RMIInvokeRequest = {
         proxy_uuid: proxy_uuid,
@@ -51,9 +65,9 @@ function genFn(proxy_uuid: string, fn_name: string, source: RMI.Socket): Functio
         args: args
       };
 
-      source.emit('invoke', req, (res: RMIObject) => {
+      this.__source.emit('invoke', req, (res: RMIObject) => {
         try {
-          resolve(Marshaller.demarshal(res, source));
+          resolve(Marshaller.demarshal(res, this.__source));
         } catch (e) {
           reject(e);
         }
@@ -62,17 +76,49 @@ function genFn(proxy_uuid: string, fn_name: string, source: RMI.Socket): Functio
   };
 }
 
+class GeneratedRemoteProxy extends Remote { }
+
 /// A proxy is converted into a Remote so it can be exported to another client if need be
-class GeneratedRemoteProxy extends Remote {
+function generateRemoteProxy(def: SerializableProxy, source: RMI.Socket): Remote {
+  let gen_class = class extends GeneratedRemoteProxy {
+    private __connected: boolean;
 
-  constructor(def: SerializableProxy, source: RMI.Socket) {
-    super(def.uuid);
+    constructor(def: SerializableProxy, private __source: RMI.Socket) {
+      super(def.uuid);
 
-    for (let fn_name of def.methods) {
-      (this as any)[fn_name] = genFn(def.uuid, fn_name, source);
+      // Watch for lost connection
+      this.__connected = true;
+      this.__source.on('disconnect', () => {
+        this.__connected = false;
+        console.log(def.uuid + " disconnected");
+      });
+    }
+  };
+  let prototype = gen_class.prototype;
+
+  // Define stub functions
+  for (let fn_name of def.methods) {
+    prototype[fn_name] = genFn(def.uuid, fn_name);
+  }
+
+  // Add readonly values, if given
+  if (def.readonlyValues) {
+    for (let name in def.readonlyValues) {
+      // When need to modify, set __XXX
+      let hidden_name = "__" + name;
+      prototype[hidden_name] = def.readonlyValues[name];
+
+      Object.defineProperty(prototype, name, {
+        configurable: false,
+        enumerable: false,
+        get: function() {
+          return this[hidden_name];
+        }
+      });
     }
   }
 
+  return new gen_class(def, source);
 }
 
 // Helper class

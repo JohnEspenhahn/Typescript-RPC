@@ -1,14 +1,22 @@
 import { ClientConsumer } from "./public/ClientImpl";
 import { ServerConsumer } from "./public/ServerConsumer";
+import { RPCError } from "../../rpc/RPCError";
 
-export class ServerImpl extends ServerConsumer {  
+export class ServerImpl extends ServerConsumer { 
+
   constructor() {
     super();
   }
 
-  public produce(msg: string) {
-    for (let c of this.consumers)
-      c.consume(msg);
+  protected produce(msg: string) {
+    this.consumers = this.consumers.filter((client) => {
+      try {
+        client.consume(msg);
+        return true;
+      } catch (e) {
+        return false;
+      }
+    });
   }
 
 }

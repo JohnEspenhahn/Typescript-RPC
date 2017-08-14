@@ -11,13 +11,18 @@ export abstract class ServerConsumer extends Remote {
     this.consumers = [];
   }
 
-  public add(client: ClientConsumer) {
+  async addConsumer(client: ClientConsumer) {
     this.consumers.push(client);
   }
 
-  public consume(msg: string) {
+  async getConsumers(): Promise<ClientConsumer[]> {
+    console.log(this.consumers);
+    return this.consumers;
+  }
+
+  async consume(msg: string) {
     this.produce(msg);
   }
 
-  public abstract produce(msg: string): void;
+  protected abstract produce(msg: string): void;
 }

@@ -5,7 +5,7 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
 // Start RMI Regsitry
-import { RMIServerRegistry } from './index';
+import { RMIServerRegistry } from './rpc/RMIServerRegistry';
 var registry: RMIServerRegistry = RMIServerRegistry.get(io);
 app.use(registry.express.middleware); // Allow http synchronous lookup
 

@@ -1,8 +1,28 @@
-<form #messageForm="ngForm" (ngSubmit)="send(message.value); messageForm.reset()">
-  <input type="text" name="message" [(ngModel)]="model.message" #message="ngModel" required />
-  <button type="submit" [disabled]="!messageForm.form.valid">Send</button>
-</form>
-
-<hr />
-
-<p *ngFor="let m of client.messages">{{ m }}</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 col-sm-7">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <form #messageForm="ngForm" (ngSubmit)="send(message.value); messageForm.reset()">
+              <input type="text" name="message" [(ngModel)]="model.message" #message="ngModel" required />
+              <button type="submit" [disabled]="!messageForm.form.valid || !client.connected">Send</button>
+            </form>
+          </div>
+        </div>
+        <div class="row" *ngFor="let m of client.messages">
+          <div class="col-md-12">{{ m }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-5">
+      <div class="container-fluid" *ngIf="client.connected">
+        <div class="row" *ngFor="let peer of client.peers | async">
+          <div class="col-md-12">
+            {{ peer.name }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

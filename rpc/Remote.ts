@@ -6,5 +6,9 @@ export abstract class Remote {
     this.__proxy_uuid = uuid ? uuid : UUID.generate();
   }
 
-  public readonly __proxy_uuid: string;
+  readonly __proxy_uuid: string;
+  
+  __broadcast_attribute(attribute_name: string, value: any): void {
+    throw new Error("__broadcast_attribute: Unimplemented");
+  }
 }
