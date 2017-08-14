@@ -7,7 +7,7 @@ export interface RMILookupRequest {
 }
 
 export interface RMIInvokeRequest {
-  proxy_uuid: string;
+  ProxyUUIDSymbol: string;
   fn_name: string;
   args: RMIObject[];
 }

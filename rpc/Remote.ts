@@ -1,14 +1,16 @@
 import { UUID } from "./utils/UUID";
 
+export const ProxyUUIDSymbol = Symbol("ProxyUUIDSymbol");
+export const ProxyBroadcastAttributeSymbol = Symbol("ProxyBroadcastAttributeSymbol");
+
 export abstract class Remote {
 
   constructor(uuid?: string) {
-    this.__proxy_uuid = uuid ? uuid : UUID.generate();
+    this[ProxyUUIDSymbol] = uuid ? uuid : UUID.generate();
   }
-
-  readonly __proxy_uuid: string;
   
-  __broadcast_attribute(attribute_name: string, value: any): void {
-    throw new Error("__broadcast_attribute: Unimplemented");
-  }
+}
+
+Remote.prototype[ProxyBroadcastAttributeSymbol] = function(attribute_name: string, value: any) {
+  throw new Error("ProxyBroadcastAttributeSymbol: Unimplemented");
 }

@@ -1,4 +1,4 @@
-import { Remote } from "./Remote";
+import { Remote, ProxyUUIDSymbol } from "./Remote";
 import { Marshaller } from "./Marshaller";
 import { RMIObject } from "./RMIObject";
 import { RMIRegistry } from "./RMIRegistry";
@@ -17,7 +17,7 @@ export class ProxyGenerator {
   }
 
   public static serialize(remote: Remote): SerializableProxy {
-    let uuid: string = remote.__proxy_uuid;
+    let uuid: string = remote[ProxyUUIDSymbol];
     let cp = ProxyGenerator.cache[uuid];
     if (cp) return cp.serializable_proxy;
     else {
@@ -52,7 +52,7 @@ export class ProxyGenerator {
   
 }
 
-function genFn(proxy_uuid: string, fn_name: string): Function {
+function genFn(ProxyUUIDSymbol: string, fn_name: string): Function {
   return function() {
     if (!this.__connected)
       throw new RPCError("Client disconnected");
@@ -60,7 +60,7 @@ function genFn(proxy_uuid: string, fn_name: string): Function {
     var args = Marshaller.marshal_args(arguments);
     return new Promise((resolve, reject) => {
       var req: RMIInvokeRequest = {
-        proxy_uuid: proxy_uuid,
+        ProxyUUIDSymbol: ProxyUUIDSymbol,
         fn_name: fn_name,
         args: args
       };
@@ -94,7 +94,7 @@ function generateRemoteProxy(def: SerializableProxy, source: RMI.Socket): Remote
       });
     }
   };
-  
+
   let prototype = gen_class.prototype;
 
   // Define stub functions

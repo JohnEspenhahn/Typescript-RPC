@@ -1,4 +1,4 @@
-import { Remote } from "./Remote";
+import { Remote, ProxyUUIDSymbol } from "./Remote";
 import { TypeUtils } from "./utils/TypeUtils";
 
 /// An object which has a unique id and a list of methods that can be invoked remotly
@@ -40,7 +40,7 @@ export class SerializableProxy {
     }
 
     this.methods = methods;
-    this.uuid = remote.__proxy_uuid;
+    this.uuid = remote[ProxyUUIDSymbol];
 
     if (Object.keys(readonlyValues).length > 0)
       this.readonlyValues = readonlyValues;

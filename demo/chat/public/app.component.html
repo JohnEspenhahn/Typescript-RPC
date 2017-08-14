@@ -1,5 +1,10 @@
 <div class="container">
   <div class="row">
+    <div class="col-md-12">
+      <h2 (click)="changeName()">Your Name: {{ client.name }}</h2>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-md-9 col-sm-7">
       <div class="container-fluid">
         <div class="row">
@@ -18,7 +23,7 @@
     <div class="col-md-3 col-sm-5">
       <div class="container-fluid" *ngIf="client.connected">
         <div class="row" *ngFor="let peer of client.peers | async">
-          <div class="col-md-12">
+          <div class="col-md-12" (click)="directMessage(peer)">
             {{ peer.name }}
           </div>
         </div>

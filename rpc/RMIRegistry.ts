@@ -22,7 +22,7 @@ export abstract class RMIRegistry {
   protected remote_invoke(data: RMIInvokeRequest, source: RMI.Socket, callback: ResolveFunction) {
     if (RMIRegistry.DEBUG) console.log("Invoking " + data.fn_name);
 
-    var remote = ProxyGenerator.getByUUID(data.proxy_uuid);
+    var remote = ProxyGenerator.getByUUID(data.ProxyUUIDSymbol);
     if (remote) {
       var fn = (remote as any)[data.fn_name];
       if (fn && fn.apply) {
@@ -48,6 +48,6 @@ export abstract class RMIRegistry {
           this.respond(new Error("UncaughtException: " + e), callback);
         }
       } else this.respond(new Error("No such function " + data.fn_name), callback);
-    } else this.respond(new Error("No such proxy with uuid " + data.proxy_uuid), callback);
+    } else this.respond(new Error("No such proxy with uuid " + data.ProxyUUIDSymbol), callback);
   }
 }

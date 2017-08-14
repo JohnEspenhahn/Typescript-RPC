@@ -13,13 +13,12 @@ export class ClientConsumer extends Remote {
     if (this.messages.length > 10)
       this.messages.pop();
 
-    this.messages.unshift((source ? 'DM:' : '') + msg);
+    this.messages.unshift((source ? `${source.name}:` : '') + msg);
   }
 
   @RemoteAnnotations.ReadHeavy
-  get name() { 
-    return this._name;
-  }
+  get name() { return this._name }
+  set name(name: string) { this._name = name }
 }
 
 export class ClientImpl extends ClientConsumer {
@@ -42,6 +41,10 @@ export class ClientImpl extends ClientConsumer {
   async produce(msg: string) {
     if (this.connected)
       this.server.consume(msg);
+  }
+
+  onPeerDisconnected(peer: ClientConsumer) {
+    
   }
 
 }

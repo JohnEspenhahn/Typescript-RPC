@@ -7,7 +7,7 @@
         "experimentalDecorators": true,
         "moduleResolution": "node",
         "sourceMap": true,
-        "lib": [ "es2016", "dom" ],
+        "lib": [ "ES2016", "ES2015", "dom" ],
         "noImplicitAny": true,
         "suppressImplicitAnyIndexErrors": true
     }

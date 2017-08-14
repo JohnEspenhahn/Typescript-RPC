@@ -1,4 +1,4 @@
-import { Remote } from "./Remote";
+import { Remote, ProxyBroadcastAttributeSymbol } from "./Remote";
 import { UUID } from "./utils/UUID";
 import { SerializableProxy } from "./SerializableProxy";
 import { ProxyObject } from "./RMIObject";
@@ -8,7 +8,7 @@ import { ProxyGenerator } from "./ProxyGenerator";
 import { RMIObject } from "./RMIObject";
 import { RMIInvokeRequest, RMILookupRequest } from "./RMIRequest";
 
-Remote.prototype.__broadcast_attribute = function() {
+Remote.prototype[ProxyBroadcastAttributeSymbol] = function() {
   console.log("__broadcast_attribute from client");
 };
 
